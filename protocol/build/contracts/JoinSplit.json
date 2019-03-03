@@ -1,0 +1,1012 @@
+{
+  "contractName": "JoinSplit",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "EIP712_DOMAIN_HASH",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0xe306f779"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor",
+      "signature": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes"
+        },
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "uint256[6]"
+        }
+      ],
+      "name": "validateJoinSplit",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function",
+      "signature": "0x7a26becd"
+    }
+  ],
+  "bytecode": "0x7f454950373132446f6d61696e280000000000000000000000000000000000000060a09081527f737472696e67206e616d652c000000000000000000000000000000000000000060ad527f737472696e672076657273696f6e2c000000000000000000000000000000000060b9527f6164647265737320766572696679696e67436f6e74726163740000000000000060c8527f290000000000000000000000000000000000000000000000000000000000000060e152604260808181529120601960e2527f415a5445435f43525950544f4752415048595f454e47494e4500000000000000610102526001610122527f3100000000000000000000000000000000000000000000000000000000000000610142526101829081527fc8066e2c715ce196630b273cd256d8959d5b9fefc55e9e6d999fb0f08bb7f75f6101a2527fc89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc66101c252306101e252610162829052610202604052206000556108d3806101876000396000f3fe60806040526004361061003a577c01000000000000000000000000000000000000000000000000000000006000350463e306f7798114610596575b610042610047565b6102cd565b60443560805260643560a05261018435610104016101243581357f30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f00000018061014435068284111561009c5761019460005260206000fd5b60a060c0863502860103356024356102a052806102c052846102e052610164356103005282828285030990506100d28487610552565b608084026103200160005b858110156102905760c08102602089010160006020820135868960018601146001811461010f57801561012457610129565b8793508a8c141561011f57928903925b610129565b843593505b506101358284866104a3565b8a60018601116001811461014e57801561017b57610182565b89848b038908975089600051068a81860994508a81850993508a818b099250602060002060005250610182565b8984890897505b5060406080850160e037604080850160203780890361012052826060528160c05260406101a0606060e060075afa60406101206060602060075afa1660406101606060608060075afa166040610160608061012060065afa16604087608061016060065afa16858c141561023057602051610260526040516102805260e0516101e052610100517f30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4703610200525b8b861115610269578160605260406102206060602060075afa166040610260608061022060065afa1660406101e060806101a060065afa165b80151561027c5761019060005260206000fd5b5050506040939093019250506001016100dd565b50848610156102a3576102a360846102d2565b61029f1981016102a0208490068381146102c35761019460005260206000fd5b5050505050505050565b61049e565b7f30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4781356020830135604084013560608501357f090689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b81147f12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa83147f198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c285147f1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed87148415861588158a1517171717171717156103b05761019060005260206000fd5b6101e051602052610200516040527f1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed6080527f198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c26060527f12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa60c0527f090689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b60a0526102605160e05261028051610100528361014052826101205281610180528061016052602080610180602060085afa60205115811517156104955761019060005260206000fd5b50505050505050565b61054d565b7f30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f00000017f30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4760408301356060840135608085013560a086013584838409856003878789898a090908148582830986600388868a888909090814166001891189888b06141660018b118b898d061416161615156105425761019060005260206000fd5b505050505050505050565b610589565b60005b8281101561057b57606060c0820283010160808160808402610320013750600101610555565b505060800261032020600052565b6105946000546105bd565b005b3480156105a257600080fd5b506105ab6108a1565b60408051918252519081900360200190f35b61018435610104018035610124356101c435610124016101a435610124016101e435610144017f6c1a087ea32e7586c4241d8ad29826c79af0e5ae5c44ca4be88caa5a18b99446608052600160a0526101443560e0526024356101005261190161012052866101405260016101a05260606101c05260a061020052610164356102405260a060c0873502870103357f183227397098d014dc2822db40c0ac2e9419f4243cdcb848a1f0fac9f80000008111600181146106815780156106ad576106b3565b7f30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f00000018203610260526106b3565b81610260525b506102a08590526102806102c0602087020160005b8781101561079e5760c0810260208b0101606082028701608060408301600037608060002060c05260a060802061016052604261013e2060005260ff81351660205260406020820160403760a0845260208085016080600060015afa15602085015115171561073d5761019060005260206000fd5b60c05160408501526040606085015260ff60020a600160608401351602604083013517608085015260ff60020a600160a0840135160260808301351760a08501528484036020840260408701015260c08401935050506001810190506106c8565b50908103601f1981016102805260a00161022052858703602080830182905260409102820101865b888110156108735760c0810260208b0101602089830302860135806040880301356080604084016000378060a001855260208b8503028a013560208601526080600020604086015280604001606086015260ff60020a6001602051160260005117608086015260ff60020a600160605116026040511760a08601528060208903830160c087013785850360208c8603026040880101526020855101850194505050506001810190506107c6565b5060208282030382526102808103806080016101e0528060e001610180526020610160528061012001610160f35b6000548156fea165627a7a72305820586981b2eb790462a2270da3ebf3111872a80cbc76ab53927f4d2fef06dbdd6e0029",
+  "deployedBytecode": "0x60806040526004361061003a577c01000000000000000000000000000000000000000000000000000000006000350463e306f7798114610596575b610042610047565b6102cd565b60443560805260643560a05261018435610104016101243581357f30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f00000018061014435068284111561009c5761019460005260206000fd5b60a060c0863502860103356024356102a052806102c052846102e052610164356103005282828285030990506100d28487610552565b608084026103200160005b858110156102905760c08102602089010160006020820135868960018601146001811461010f57801561012457610129565b8793508a8c141561011f57928903925b610129565b843593505b506101358284866104a3565b8a60018601116001811461014e57801561017b57610182565b89848b038908975089600051068a81860994508a81850993508a818b099250602060002060005250610182565b8984890897505b5060406080850160e037604080850160203780890361012052826060528160c05260406101a0606060e060075afa60406101206060602060075afa1660406101606060608060075afa166040610160608061012060065afa16604087608061016060065afa16858c141561023057602051610260526040516102805260e0516101e052610100517f30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4703610200525b8b861115610269578160605260406102206060602060075afa166040610260608061022060065afa1660406101e060806101a060065afa165b80151561027c5761019060005260206000fd5b5050506040939093019250506001016100dd565b50848610156102a3576102a360846102d2565b61029f1981016102a0208490068381146102c35761019460005260206000fd5b5050505050505050565b61049e565b7f30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4781356020830135604084013560608501357f090689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b81147f12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa83147f198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c285147f1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed87148415861588158a1517171717171717156103b05761019060005260206000fd5b6101e051602052610200516040527f1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed6080527f198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c26060527f12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa60c0527f090689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b60a0526102605160e05261028051610100528361014052826101205281610180528061016052602080610180602060085afa60205115811517156104955761019060005260206000fd5b50505050505050565b61054d565b7f30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f00000017f30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4760408301356060840135608085013560a086013584838409856003878789898a090908148582830986600388868a888909090814166001891189888b06141660018b118b898d061416161615156105425761019060005260206000fd5b505050505050505050565b610589565b60005b8281101561057b57606060c0820283010160808160808402610320013750600101610555565b505060800261032020600052565b6105946000546105bd565b005b3480156105a257600080fd5b506105ab6108a1565b60408051918252519081900360200190f35b61018435610104018035610124356101c435610124016101a435610124016101e435610144017f6c1a087ea32e7586c4241d8ad29826c79af0e5ae5c44ca4be88caa5a18b99446608052600160a0526101443560e0526024356101005261190161012052866101405260016101a05260606101c05260a061020052610164356102405260a060c0873502870103357f183227397098d014dc2822db40c0ac2e9419f4243cdcb848a1f0fac9f80000008111600181146106815780156106ad576106b3565b7f30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f00000018203610260526106b3565b81610260525b506102a08590526102806102c0602087020160005b8781101561079e5760c0810260208b0101606082028701608060408301600037608060002060c05260a060802061016052604261013e2060005260ff81351660205260406020820160403760a0845260208085016080600060015afa15602085015115171561073d5761019060005260206000fd5b60c05160408501526040606085015260ff60020a600160608401351602604083013517608085015260ff60020a600160a0840135160260808301351760a08501528484036020840260408701015260c08401935050506001810190506106c8565b50908103601f1981016102805260a00161022052858703602080830182905260409102820101865b888110156108735760c0810260208b0101602089830302860135806040880301356080604084016000378060a001855260208b8503028a013560208601526080600020604086015280604001606086015260ff60020a6001602051160260005117608086015260ff60020a600160605116026040511760a08601528060208903830160c087013785850360208c8603026040880101526020855101850194505050506001810190506107c6565b5060208282030382526102808103806080016101e0528060e001610180526020610160528061012001610160f35b6000548156fea165627a7a72305820586981b2eb790462a2270da3ebf3111872a80cbc76ab53927f4d2fef06dbdd6e0029",
+  "sourceMap": "1133:160:11:-;;;;;;;;;;;;;;;;;22:32:-1;1410:17738:2;6:49:-1;;;1123:171:11;;1133:160;;1611:18;;;;1133:160;1611:18;1661:21;;;;1516:223;;;;1595:36;1516:223;;1645:39;1516:223;;1722:4;1516:223;;1661:21;6:49:-1;;;1516:223:11;1410:17738:2;1516:223:11;1506:234;-1:-1:-1;1485:255:11;1410:17738:2;;;;;;",
+  "deployedSourceMap": "1410:17738:2:-;;;;;;;;;;;;;;;;;;2382:19;;;;3275:9600;;;3348:4;3335:18;3329:4;3322:32;3397:4;3384:18;3378:4;3371:32;3457:5;3444:19;3437:5;3433:31;3503:5;3490:19;3548:5;3535:19;3588:66;3713:9;3705:5;3692:19;3688:35;3785:1;3782;3779:8;3776:2;;;3803:3;3797:4;3790:17;3821:4;3815;3808:18;3776:2;3980:4;3972;3964:5;3951:19;3947:30;3940:5;3936:42;3932:53;3919:67;4083:4;4070:18;4063:5;4056:33;4120:2;4113:5;4106:17;4154:1;4147:5;4140:16;4200:5;4187:19;4180:5;4173:34;4455:9;4444;4439:2;4428:9;4424:18;4417:48;4411:54;;4515:25;4538:1;4531:5;4515:25;;;4584:4;4581:1;4577:12;4570:5;4566:24;5206:1;5191:6447;5216:1;5213;5210:8;5191:6447;;;5361:4;5358:1;5354:12;5347:4;5340:5;5336:16;5332:35;;6527:4;6516:9;6512:20;6499:34;6559:9;7074:1;7067:4;7064:1;7060:12;7057:19;7098:1;7093:220;;;;7330:39;;;;7050:319;;7093:220;7127:2;7122:7;;7222:1;7219;7216:8;7213:2;;;7256:17;;;;7213:2;7093:220;;7330:39;7357:9;7344:23;7339:28;;7050:319;;7446:35;7479:1;7476;7465:9;7446:35;;;7653:1;7646:4;7643:1;7639:12;7636:19;7677:1;7672:501;;;;8190:181;;;;7629:742;;7672:501;7835:9;7831:1;7820:9;7816:17;7812:2;7805:40;7799:46;;7892:9;7885:4;7879:11;7875:27;7941:9;7938:1;7935;7928:23;7923:28;;7990:9;7987:1;7984;7977:23;7972:28;;8047:9;8044:1;8033:9;8026:31;8021:36;;8149:4;8143;8133:21;8127:4;8120:35;7679:494;7672:501;;8190:181;8343:9;8340:1;8336:2;8329:24;8323:30;;7629:742;;8838:4;8831;8820:9;8816:20;8810:4;8797:46;8901:4;8894;8883:9;8879:20;8873:4;8860:46;8952:1;8941:9;8937:17;8930:5;8923:32;8986:1;8980:4;8973:15;9018:1;9012:4;9005:15;9400:4;9393:5;9387:4;9381;9378:1;9373:3;9362:43;9482:4;9475:5;9469:4;9463;9460:1;9455:3;9444:43;9432:56;9565:4;9558:5;9552:4;9546;9543:1;9538:3;9527:43;9515:56;9836:4;9829:5;9823:4;9816:5;9813:1;9808:3;9797:44;9785:57;10059:4;10056:1;10050:4;10043:5;10040:1;10035:3;10024:40;10012:53;10332:8;;;10329:2;;;10383:4;10377:11;10370:5;10363:26;10430:4;10424:11;10417:5;10410:26;10477:4;10471:11;10464:5;10457:26;10596:5;10590:12;10522:66;10518:85;10511:5;10504:100;10329:2;10894:1;10891;10888:8;10885:2;;;10932:1;10926:4;10919:15;11015:4;11008:5;11002:4;10996;10993:1;10988:3;10977:43;10965:56;11192:4;11185:5;11179:4;11172:5;11169:1;11164:3;11153:44;11141:57;11367:4;11360:5;11354:4;11347:5;11344:1;11339:3;11328:44;11316:57;10885:2;11501:6;11494:14;11491:2;;;11524:3;11518:4;11511:17;11542:4;11536;11529:18;11491:2;-1:-1:-1;;;11582:4:2;11575:12;;;;;-1:-1:-1;;5233:4:2;5226:12;5191:6447;;;5195:14;12081:1;12078;12075:8;12072:2;;;12106:21;12122:4;12106:21;;;-1:-1:-1;;12469:13:2;;12476:5;12452:31;12448:47;;;12522:23;;;12512:2;;12632:3;12626:4;12619:17;12670:4;12664;12657:18;12512:2;3304:9571;;;;;;;;;;13125:2508;;;13191:66;13301:2;13288:16;13356:4;13352:2;13348:13;13335:27;13414:4;13410:2;13406:13;13393:27;13472:4;13468:2;13464:13;13451:27;14067:65;14059:6;14056:77;13966:66;13958:6;13955:78;13865:66;13857:6;13854:78;13764:66;13756:6;13753:78;13723:6;13716:14;13686:6;13679:14;13649:6;13642:14;13613:6;13606:14;13582:75;13579:115;13576:155;13573:259;13570:363;13567:467;13564:570;13561:2;;;14186:3;14180:4;14173:17;14224:4;14218;14211:18;13561:2;14617:5;14611:12;14605:4;14598:26;14683:5;14677:12;14671:4;14664:26;14743:66;14737:4;14730:80;14840:66;14834:4;14827:80;14937:66;14931:4;14924:80;15034:65;15028:4;15021:79;15136:5;15130:12;15124:4;15117:26;15203:5;15197:12;15190:5;15183:27;15264:6;15257:5;15250:21;15302:6;15295:5;15288:21;15340:6;15333:5;15326:21;15378:6;15371:5;15364:21;15456:4;15450;15443:5;15437:4;15434:1;15429:3;15418:43;15515:4;15509:11;15502:19;15492:7;15485:15;15482:40;15479:2;;;15558:3;15552:4;15545:17;15596:4;15590;15583:18;15479:2;13154:2479;;;;;;;;;15976:1994;;;16051:66;16153;16273:4;16267;16263:15;16250:29;16333:4;16327;16323:15;16310:29;16393:4;16387;16383:15;16370:29;16453:4;16447;16443:15;16430:29;17755:11;17747:6;17739;17732:35;17661:11;17626:1;17580:11;17572:6;17558:11;17550:6;17542;17535:35;17528:64;17488:214;17438:355;17374:11;17366:6;17358;17351:35;17280:11;17245:1;17199:11;17191:6;17177:11;17169:6;17161;17154:35;17147:64;17107:214;17057:355;17028:791;16913:1;16910;16907:8;16843:1;16831:9;16828:1;16824:17;16821:24;16788:188;16690:1;16687;16684:8;16620:1;16608:9;16605:1;16601:17;16598:24;16565:197;16536:466;16507:1334;16479:1380;16476:2;;;17895:3;17889:4;17882:17;17933:4;17927;17920:18;16476:2;16016:1954;;;;;;;;;;;18561:330;;;18629:1;18614:202;18639:1;18636;18633:8;18614:202;;;18725:4;18717;18714:1;18710:12;18703:5;18699:24;18695:35;18793:4;18786:5;18778:4;18775:1;18771:12;18764:5;18760:24;18747:51;-1:-1:-1;18656:4:2;18649:12;18614:202;;;-1:-1:-1;;18870:4:2;18863:12;18856:5;18846:30;18840:4;18833:44;18596:295;;19086:53;19120:18;;19086:33;:53::i;:::-;1410:17738;1401:33:11;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1401:33:11;;;:::i;:::-;;;;;;;;;;;;;;;;810:10756:3;977:5;964:19;957:5;953:31;1019:5;1006:19;1060:5;1047:19;1123:5;1110:19;1103:5;1099:31;1222:5;1209:19;1202:5;1198:31;1317:5;1304:19;1297:5;1293:31;1801:66;1795:4;1788:80;1894:4;1888;1881:18;1938:5;1925:19;1919:4;1912:33;1998:4;1985:18;1978:5;1971:33;2196:6;2189:5;2182:21;2230:10;2223:5;2216:25;4144:4;4137:5;4130:19;4223:4;4216:5;4209:19;4357:4;4350:5;4343:19;4509:5;4496:19;4489:5;4482:34;4793:4;4785;4777:5;4764:19;4760:30;4753:5;4749:42;4745:53;4732:67;4831:77;4822:7;4819:90;4927:1;4922:134;;;;5069:61;;;;4812:318;;4922:134;4974:66;4965:7;4961:80;4954:5;4947:95;4922:134;;5069:61;5108:7;5101:5;5094:22;4812:318;-1:-1:-1;5240:19:3;5233:30;;;5160:5;5416;5254:4;5423:12;;5412:24;5465:1;5450:2716;5475:1;5472;5469:8;5450:2716;;;5564:4;5561:1;5557:12;5550:4;5543:5;5539:16;5535:35;5683:4;5680:1;5676:12;5664:10;5660:29;5796:4;5789;5778:9;5774:20;5768:4;5755:46;5925:4;5919;5909:21;5903:4;5896:35;6045:4;6039;6029:21;6022:5;6015:36;6098:4;6091:5;6081:22;6075:4;6068:36;6223:4;6206:14;6193:28;6189:39;6183:4;6176:53;6307:4;6300;6284:14;6280:25;6274:4;6261:51;6409:4;6406:1;6399:15;6672:4;6665;6662:1;6658:12;6652:4;6646;6640;6635:3;6624:53;6617:61;6592:4;6589:1;6585:12;6579:19;6572:27;6552:144;6549:2;;;6728:3;6722:4;6715:17;6746:4;6740;6733:18;6549:2;6862:4;6856:11;6849:4;6846:1;6842:12;6835:33;6989:4;6982;6979:1;6975:12;6968:26;-1:-1:-1;;;7282:4:3;7274;7263:9;7259:20;7246:34;7242:45;7217:180;7189:4;7178:9;7174:20;7161:34;7137:278;7114:4;7111:1;7107:12;7083:350;-1:-1:-1;;;7721:4:3;7713;7702:9;7698:20;7685:34;7681:45;7656:180;7628:4;7617:9;7613:20;7600:34;7576:278;7553:4;7550:1;7546:12;7522:350;8027:8;8024:1;8020:16;8012:4;8009:1;8005:12;7998:4;7988:8;7984:19;7980:38;7973:64;8147:4;8144:1;8140:12;8135:17;;5500:2666;;5492:4;5489:1;5485:12;5480:17;;5450:2716;;;-1:-1:-1;8255:16:3;;;-1:-1:-1;;8251:27:3;;8244:5;8237:42;8376:4;8372:27;8365:5;8358:42;8514:9;;;8273:4;8493:19;;;8486:38;;;8585:4;8591:20;;8574:39;;;8514:9;8655:2311;8680:1;8677;8674:8;8655:2311;;;8803:4;8800:1;8796:12;8789:4;8782:5;8778:16;8774:35;8932:4;8928:1;8925;8921:9;8917:20;8907:8;8903:35;8890:49;9056:13;9049:4;9039:8;9035:19;9031:39;9018:53;9179:4;9172;9161:9;9157:20;9151:4;9138:46;9286:14;9280:4;9276:25;9273:1;9266:36;9447:4;9443:1;9440;9436:9;9432:20;9418:12;9414:39;9401:53;9394:4;9391:1;9387:12;9380:75;9544:4;9538;9528:21;9521:4;9518:1;9514:12;9507:43;9658:14;9652:4;9648:25;9641:4;9638:1;9634:12;9627:47;-1:-1:-1;;;9940:4:3;9933;9927:11;9923:22;9890:177;9859:4;9853:11;9825:264;9798:4;9795:1;9791:12;9763:344;-1:-1:-1;;;10353:4:3;10346;10340:11;10336:22;10307:165;10280:4;10274:11;10250:240;10227:4;10224:1;10220:12;10196:312;10642:14;10634:4;10624:8;10620:19;10605:13;10601:39;10594:4;10591:1;10587:12;10574:83;10820:8;10817:1;10813:16;10805:4;10801:1;10798;10794:9;10790:20;10783:4;10773:8;10769:19;10765:46;10758:72;10946:4;10942:1;10936:8;10932:19;10929:1;10925:27;10920:32;;8705:2261;;;8697:4;8694:1;8690:12;8685:17;;8655:2311;;;8659:14;11088:4;11077:8;11074:1;11070:16;11066:27;11056:8;11049:45;11188:5;11185:1;11181:13;11231:11;11225:4;11221:22;11214:5;11207:37;11321:11;11315:4;11311:22;11304:5;11297:37;11463:4;11456:5;11449:19;11506:11;11499:5;11495:23;11488:5;11481:38;1401:33:11;;;;:::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\nimport \"./JoinSplitABIEncoder.sol\";\nimport \"../../../libs/LibEIP712.sol\";\n\ncontract JoinSplitInterface is LibEIP712 {\n    /* solhint-disable-next-line var-name-mixedcase */\n    bytes32 public EIP712_DOMAIN_HASH;\n\n    constructor() public {}\n    \n    function validateJoinSplit(\n        bytes calldata, \n        address, \n        uint[6] calldata\n    ) \n        external \n        pure \n        returns (bytes memory) \n    {}\n}\n\n/**\n * @title Library to validate AZTEC zero-knowledge proofs\n * @author Zachary Williamson, AZTEC\n * @dev Don't include this as an internal library. This contract uses a static memory table to cache\n * elliptic curve primitives and hashes.\n * Calling this internally from another function will lead to memory mutation and undefined behaviour.\n * The intended use case is to call this externally via `staticcall`.\n * External calls to OptimizedAZTEC can be treated as pure functions as this contract contains no\n * storage and makes no external calls (other than to precompiles)\n * Copyright Spilsbury Holdings Ltd 2018. All rights reserved.\n * We will be releasing AZTEC as an open-source protocol that provides efficient transaction privacy for Ethereum.\n * Our full vision of the protocol includes confidential cross-asset interactions via our\n * family of AZTEC zero-knowledge proofs\n * and the AZTEC token standard, stay tuned for updates!\n **/\ncontract JoinSplit is LibEIP712 {\n\n    /**\n     * @dev AZTEC will take any transaction sent to it and attempt to validate a zero knowledge proof.\n     * If the proof is not valid, the transaction will throw.\n     * @notice See AZTECInterface for how method calls should be constructed.\n     * 'Cost' of raw elliptic curve primitives for a transaction:\n     * 260,700 gas + (124,500 * number of input notes) + (167,600 * number of output notes).\n     * For a basic 'joinSplit' with 2 inputs and 2 outputs = 844,900 gas.\n     * AZTEC is written in YUL to enable manual memory management and for other efficiency savings.\n     **/\n    function() external payable {\n        assembly {\n            // We don't check for function signatures,\n            // there's only one function that ever gets called: validateJoinSplit()\n            // We still assume calldata is offset by 4 bytes so that we can represent this contract\n            // through a compatible ABI\n            validateJoinSplit()\n\n            /**\n             * New calldata map\n             * 0x04:0x24      = calldata location of proofData byte array\n             * 0x24:0x44      = message sender\n             * 0x44:0x64      = h_x\n             * 0x64:0x84      = h_y\n             * 0x84:0xa4      = t2_x0\n             * 0xa4:0xc4      = t2_x1\n             * 0xc4:0xe4      = t2_y0\n             * 0xe4:0x104     = t2_y1\n             * 0x104:0x124    = length of proofData byte array\n             * 0x124:0x144    = m\n             * 0x144:0x164    = challenge\n             * 0x164:0x184    = publicOwner\n             * 0x184:0x1a4    = offset in byte array to notes\n             * 0x1a4:0x1c4    = offset in byte array to inputSignatures\n             * 0x1c4:0x1e4    = offset in byte array to outputOwners\n             * 0x1e4:0x204    = offset in byte array to metadata\n             */\n            function validateJoinSplit() {\n                mstore(0x80, calldataload(0x44))\n                mstore(0xa0, calldataload(0x64))\n                let notes := add(0x104, calldataload(0x184))\n                let m := calldataload(0x124)\n                let n := calldataload(notes)\n                let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n                let challenge := mod(calldataload(0x144), gen_order)\n\n                // validate m <= n\n                if gt(m, n) { mstore(0x00, 404) revert(0x00, 0x20) }\n\n                // recover k_{public} and calculate k_{public}\n                let kn := calldataload(sub(add(notes, mul(calldataload(notes), 0xc0)), 0xa0))\n\n                // add kn and m to final hash table\n                mstore(0x2a0, calldataload(0x24))\n                mstore(0x2c0, kn)\n                mstore(0x2e0, m)\n                mstore(0x300, calldataload(0x164))\n                /* mstore(0x00, m)\n                mstore(0x20, n)\n                mstore(0x40, kn)\n                mstore(0x60, calldataload(0x24))\n                return(0x00, 0x80) */\n                kn := mulmod(sub(gen_order, kn), challenge, gen_order) // we actually want c*k_{public}\n                hashCommitments(notes, n)\n                let b := add(0x320, mul(n, 0x80))\n\n                // Iterate over every note and calculate the blinding factor B_i = \\gamma_i^{kBar}h^{aBar}\\sigma_i^{-c}.\n                // We use the AZTEC protocol pairing optimization to reduce the number of pairing comparisons to 1,\n                //  which adds some minor alterations\n\n                // Iterate over every note and calculate the blinding factor B_i = \\gamma_i^{kBar}h^{aBar}\\sigma_i^{-c}.\n                // We use the AZTEC protocol pairing optimization to reduce the number of pairing comparisons to 1,\n                //  which adds some minor alterations\n                for { let i := 0 } lt(i, n) { i := add(i, 0x01) } {\n\n                // Get the calldata index of this note\n                let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n\n                // Define variables k, a and c.\n                // If i <= m then\n                //   k = kBar_i\n                //   a = aBar_i\n                //   c = challenge\n                // If i > m then we add a modification for the pairing optimization\n                //   k = kBar_i * x_i\n                //   a = aBar_i * x_i\n                //   c = challenge * x_i\n                // Set j = i - (m + 1).\n                // x_0 = 1\n                // x_1 = keccak256(input string)\n                // all other x_{j} = keccak256(x_{j-1})\n                // The reason for doing this is that the point  \\sigma_i^{-cx_j} can be re-used in the pairing check\n                // Instead of validating e(\\gamma_i, t_2) == e(\\sigma_i, g_2) for all i = [m+1,\\ldots,n]\n                // We validate e(\\Pi_{i=m+1}^{n}\\gamma_i^{-cx_j}, t_2) == e(\\Pi_{i=m+1}^{n}\\sigma_i^{cx_j}, g_2).\n                // x_j is a pseudorandom variable whose entropy source is the input string, allowing for\n                // a sum of commitment points to be evaluated in one pairing comparison\n                let k\n                let a := calldataload(add(noteIndex, 0x20))\n                let c := challenge\n\n                // We don't transmit kBar_{n-1} in the proof to save space, instead we derive it from the\n                // homomorphic sum condition: \\sum_{i=0}^{m-1}\\bar{k}_i = \\sum_{i=m}^{n-1}\\bar{k}_i + k_{public}c, \n                // We can recover \\bar{k}_{n-1}.\n                // If m=n then \\bar{k}_{n-1} = \\sum_{i=0}^{n-1}\\bar{k}_i + k_{public}\n                // else \\bar{k}_{n-1} = \\sum_{i=0}^{m-1}\\bar{k}_i - \\sum_{i=m}^{n-1}\\bar{k}_i - k_{public}\n                switch eq(add(i, 0x01), n)\n                case 1 {\n                    k := kn\n\n                    // if all notes are input notes, invert k\n                    if eq(m, n) {\n                        k := sub(gen_order, k)\n                    }\n                }\n                case 0 { k := calldataload(noteIndex) }\n\n                // Check this commitment is well formed...\n                validateCommitment(noteIndex, k, a)\n\n                // If i > m then this is an output note.\n                // Set k = kx_j, a = ax_j, c = cx_j, where j = i - (m+1)\n                switch gt(add(i, 0x01), m)\n                case 1 {\n\n                    // before we update k, update kn = \\sum_{i=0}^{m-1}k_i - \\sum_{i=m}^{n-1}k_i\n                    kn := addmod(kn, sub(gen_order, k), gen_order)\n                    let x := mod(mload(0x00), gen_order)\n                    k := mulmod(k, x, gen_order)\n                    a := mulmod(a, x, gen_order)\n                    c := mulmod(challenge, x, gen_order)\n\n                    // calculate x_{j+1}\n                    mstore(0x00, keccak256(0x00, 0x20))\n                }\n                case 0 {\n\n                    // nothing to do here except update kn = \\sum_{i=0}^{m-1}k_i - \\sum_{i=m}^{n-1}k_i\n                    kn := addmod(kn, k, gen_order)\n                }\n            \n                // Calculate the G1 element \\gamma_i^{k}h^{a}\\sigma_i^{-c} = B_i\n                // Memory map:\n                // 0x20: \\gamma_iX\n                // 0x40: \\gamma_iY\n                // 0x60: k_i\n                // 0x80: hX\n                // 0xa0: hY\n                // 0xc0: a_i\n                // 0xe0: \\sigma_iX\n                // 0x100: \\sigma_iY\n                // 0x120: -c\n                calldatacopy(0xe0, add(noteIndex, 0x80), 0x40)\n                calldatacopy(0x20, add(noteIndex, 0x40), 0x40)\n                mstore(0x120, sub(gen_order, c)) \n                mstore(0x60, k)\n                mstore(0xc0, a)\n\n                // Call bn128 scalar multiplication precompiles\n                // Represent point + multiplication scalar in 3 consecutive blocks of memory\n                // Store \\sigma_i^{-c} at 0x1a0:0x200\n                // Store \\gamma_i^{k} at 0x120:0x160\n                // Store h^{a} at 0x160:0x1a0\n                let result := staticcall(gas, 7, 0xe0, 0x60, 0x1a0, 0x40)\n                result := and(result, staticcall(gas, 7, 0x20, 0x60, 0x120, 0x40))\n                result := and(result, staticcall(gas, 7, 0x80, 0x60, 0x160, 0x40))\n\n                // Call bn128 group addition precompiles\n                // \\gamma_i^{k} and h^{a} in memory block 0x120:0x1a0\n                // Store result of addition at 0x160:0x1a0\n                result := and(result, staticcall(gas, 6, 0x120, 0x80, 0x160, 0x40))\n\n                // \\gamma_i^{k}h^{a} and \\sigma^{-c} in memory block 0x160:0x1e0\n                // Store resulting point B at memory index b\n                result := and(result, staticcall(gas, 6, 0x160, 0x80, b, 0x40))\n\n                // We have \\sigma^{-c} at 0x1a0:0x200\n                // And \\sigma_{acc} at 0x1e0:0x200\n                // If i = m + 1 (i.e. first output note)\n                // then we set \\gamma_{acc} and \\sigma_{acc} to \\gamma_i, -\\sigma_i\n                if eq(i, m) {\n                    mstore(0x260, mload(0x20))\n                    mstore(0x280, mload(0x40))\n                    mstore(0x1e0, mload(0xe0))\n                    mstore(0x200, sub(0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47, mload(0x100)))\n                }\n\n                // If i > m + 1 (i.e. subsequent output notes)\n                // then we add \\sigma^{-c} and \\sigma_{acc} and store result at \\sigma_{acc} (0x1e0:0x200)\n                // we then calculate \\gamma^{cx} and add into \\gamma_{acc}\n                if gt(i, m) {\n                    mstore(0x60, c)\n                    result := and(result, staticcall(gas, 7, 0x20, 0x60, 0x220, 0x40))\n\n                    // \\gamma_i^{cx} now at 0x220:0x260, \\gamma_{acc} is at 0x260:0x2a0\n                    result := and(result, staticcall(gas, 6, 0x220, 0x80, 0x260, 0x40))\n\n                    // add \\sigma_i^{-cx} and \\sigma_{acc} into \\sigma_{acc} at 0x1e0\n                    result := and(result, staticcall(gas, 6, 0x1a0, 0x80, 0x1e0, 0x40))\n                }\n\n                // throw transaction if any calls to precompiled contracts failed\n                if iszero(result) { mstore(0x00, 400) revert(0x00, 0x20) }\n                    b := add(b, 0x40) // increase B pointer by 2 words\n                }\n\n                // If the AZTEC protocol is implemented correctly then any input notes were previously outputs of\n                // a JoinSplit transaction. We can inductively assume that all input notes\n                // are well-formed AZTEC commitments and do not need to validate the implicit range proof\n                // This is not the case for any output commitments, so if (m < n) call validatePairing()\n                if lt(m, n) {\n                    validatePairing(0x84)\n                }\n\n                // We now have the note commitments and the calculated blinding factors in a block of memory\n                // starting at 0x2a0, of size (b - 0x2a0).\n                // Hash this block to reconstruct the initial challenge and validate that they match\n                let expected := mod(keccak256(0x2a0, sub(b, 0x2a0)), gen_order)\n                if iszero(eq(expected, challenge)) {\n\n                    // No! Bad! No soup for you!\n                    mstore(0x00, 404)\n                    revert(0x00, 0x20)\n                }\n\n                // Great! All done. This is a valid proof, so fall through out of the assembly block\n                // so that we can call `ABIEncoder.encodeAndExit`\n            }\n\n            /**        \n             * @dev evaluate if e(P1, t2) . e(P2, g2) == 0.\n             * @notice we don't hard-code t2 so that contracts that call this library can use\n             * different trusted setups.\n             **/\n            function validatePairing(t2) {\n                let field_order := 0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47\n                let t2_x_1 := calldataload(t2)\n                let t2_x_2 := calldataload(add(t2, 0x20))\n                let t2_y_1 := calldataload(add(t2, 0x40))\n                let t2_y_2 := calldataload(add(t2, 0x60))\n\n                // check provided setup pubkey is not zero or g2\n                if or(or(or(or(or(or(or(\n                    iszero(t2_x_1),\n                    iszero(t2_x_2)),\n                    iszero(t2_y_1)),\n                    iszero(t2_y_2)),\n                    eq(t2_x_1, 0x1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed)),\n                    eq(t2_x_2, 0x198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c2)),\n                    eq(t2_y_1, 0x12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa)),\n                    eq(t2_y_2, 0x90689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b))\n                {\n                    mstore(0x00, 400)\n                    revert(0x00, 0x20)\n                }\n\n                // store coords in memory\n                // indices are a bit off, scipr lab's libff limb ordering (c0, c1) is opposite\n                // to what precompile expects\n                // We can overwrite the memory we used previously as this function is called at the\n                // end of the validation routine.\n                mstore(0x20, mload(0x1e0)) // sigma accumulator x\n                mstore(0x40, mload(0x200)) // sigma accumulator y\n                mstore(0x80, 0x1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed)\n                mstore(0x60, 0x198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c2)\n                mstore(0xc0, 0x12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa)\n                mstore(0xa0, 0x90689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b)\n                mstore(0xe0, mload(0x260)) // gamma accumulator x\n                mstore(0x100, mload(0x280)) // gamma accumulator y\n                mstore(0x140, t2_x_1)\n                mstore(0x120, t2_x_2)\n                mstore(0x180, t2_y_1)\n                mstore(0x160, t2_y_2)\n\n                let success := staticcall(gas, 8, 0x20, 0x180, 0x20, 0x20)\n\n                if or(iszero(success), iszero(mload(0x20))) {\n                    mstore(0x00, 400)\n                    revert(0x00, 0x20)\n                }\n            }\n\n            /**\n             * @dev check that this note's points are on the altbn128 curve(y^2 = x^3 + 3)\n             * and that signatures 'k' and 'a' are modulo the order of the curve.\n             * Transaction will throw if this is not the case.\n             * @param note the calldata loation of the note\n             **/\n            function validateCommitment(note, k, a) {\n                let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n                let field_order := 0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47\n                let gammaX := calldataload(add(note, 0x40))\n                let gammaY := calldataload(add(note, 0x60))\n                let sigmaX := calldataload(add(note, 0x80))\n                let sigmaY := calldataload(add(note, 0xa0))\n                if iszero(\n                    and(\n                        and(\n                        and(\n                            eq(mod(a, gen_order), a), // a is modulo generator order?\n                            gt(a, 1)                  // can't be 0 or 1 either!\n                        ),\n                        and(\n                            eq(mod(k, gen_order), k), // k is modulo generator order?\n                            gt(k, 1)                  // and not 0 or 1\n                        )\n                        ),\n                        and(\n                        eq( // y^2 ?= x^3 + 3\n                            addmod(\n                                mulmod(mulmod(sigmaX, sigmaX, field_order), sigmaX, field_order),\n                                3,\n                                field_order\n                            ),\n                            mulmod(sigmaY, sigmaY, field_order)\n                        ),\n                        eq( // y^2 ?= x^3 + 3\n                            addmod(\n                                mulmod(mulmod(gammaX, gammaX, field_order), gammaX, field_order),\n                                3,\n                                field_order\n                            ),\n                            mulmod(gammaY, gammaY, field_order)\n                        )\n                        )\n                    )\n                ) {\n                    mstore(0x00, 400)\n                    revert(0x00, 0x20)\n                }\n            }\n\n            /**\n             * @dev Calculate the keccak256 hash of the commitments for both input notes and output notes.\n             * This is used both as an input to validate the challenge `c` and also to\n             * generate pseudorandom relationships\n             * between commitments for different outputNotes, so that we can combine them\n             * into a single multi-exponentiation for the purposes of validating the bilinear pairing relationships.\n             * @param notes calldata location notes\n             * @param n number of notes\n             **/\n            function hashCommitments(notes, n) {\n                for { let i := 0 } lt(i, n) { i := add(i, 0x01) } {\n                let index := add(add(notes, mul(i, 0xc0)), 0x60)\n                calldatacopy(add(0x320, mul(i, 0x80)), index, 0x80)\n                }\n                mstore(0x00, keccak256(0x320, mul(n, 0x80)))\n            }\n        }\n\n        // if we've reached here, we've validated the join split transaction and haven't thrown an error.\n        // Encode the output according to the ACE standard and exit.\n        JoinSplitABIEncoder.encodeAndExit(EIP712_DOMAIN_HASH);\n    }\n}\n",
+  "sourcePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/ACE/validators/JoinSplit/JoinSplit.sol",
+  "ast": {
+    "absolutePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/ACE/validators/JoinSplit/JoinSplit.sol",
+    "exportedSymbols": {
+      "JoinSplit": [
+        1109
+      ],
+      "JoinSplitInterface": [
+        1095
+      ]
+    },
+    "id": 1110,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1070,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:2"
+      },
+      {
+        "absolutePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/ACE/validators/JoinSplit/JoinSplitABIEncoder.sol",
+        "file": "./JoinSplitABIEncoder.sol",
+        "id": 1071,
+        "nodeType": "ImportDirective",
+        "scope": 1110,
+        "sourceUnit": 1144,
+        "src": "33:35:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/libs/LibEIP712.sol",
+        "file": "../../../libs/LibEIP712.sol",
+        "id": 1072,
+        "nodeType": "ImportDirective",
+        "scope": 1110,
+        "sourceUnit": 1939,
+        "src": "69:37:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1073,
+              "name": "LibEIP712",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1938,
+              "src": "139:9:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LibEIP712_$1938",
+                "typeString": "contract LibEIP712"
+              }
+            },
+            "id": 1074,
+            "nodeType": "InheritanceSpecifier",
+            "src": "139:9:2"
+          }
+        ],
+        "contractDependencies": [
+          1938
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1095,
+        "linearizedBaseContracts": [
+          1095,
+          1938
+        ],
+        "name": "JoinSplitInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 1076,
+            "name": "EIP712_DOMAIN_HASH",
+            "nodeType": "VariableDeclaration",
+            "scope": 1095,
+            "src": "210:33:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 1075,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "210:7:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1079,
+              "nodeType": "Block",
+              "src": "271:2:2",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 1080,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1077,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "261:2:2"
+            },
+            "returnParameters": {
+              "id": 1078,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "271:0:2"
+            },
+            "scope": 1095,
+            "src": "250:23:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1093,
+              "nodeType": "Block",
+              "src": "454:2:2",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 1094,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "validateJoinSplit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1089,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1082,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1094,
+                  "src": "319:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1081,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "319:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1084,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1094,
+                  "src": "344:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1083,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "344:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1088,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1094,
+                  "src": "362:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$6_calldata_ptr",
+                    "typeString": "uint256[6]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1085,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "362:4:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 1087,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "36",
+                      "id": 1086,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "367:1:2",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": null,
+                        "typeString": null
+                      },
+                      "value": "6"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "362:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$6_storage_ptr",
+                      "typeString": "uint256[6]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "309:75:2"
+            },
+            "returnParameters": {
+              "id": 1092,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1091,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1094,
+                  "src": "435:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1090,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "435:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "434:14:2"
+            },
+            "scope": 1095,
+            "src": "283:173:2",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1110,
+        "src": "108:350:2"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1096,
+              "name": "LibEIP712",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1938,
+              "src": "1432:9:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LibEIP712_$1938",
+                "typeString": "contract LibEIP712"
+              }
+            },
+            "id": 1097,
+            "nodeType": "InheritanceSpecifier",
+            "src": "1432:9:2"
+          }
+        ],
+        "contractDependencies": [
+          1938
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Library to validate AZTEC zero-knowledge proofs\n@author Zachary Williamson, AZTEC\n@dev Don't include this as an internal library. This contract uses a static memory table to cache\nelliptic curve primitives and hashes.\nCalling this internally from another function will lead to memory mutation and undefined behaviour.\nThe intended use case is to call this externally via `staticcall`.\nExternal calls to OptimizedAZTEC can be treated as pure functions as this contract contains no\nstorage and makes no external calls (other than to precompiles)\nCopyright Spilsbury Holdings Ltd 2018. All rights reserved.\nWe will be releasing AZTEC as an open-source protocol that provides efficient transaction privacy for Ethereum.\nOur full vision of the protocol includes confidential cross-asset interactions via our\nfamily of AZTEC zero-knowledge proofs\nand the AZTEC token standard, stay tuned for updates!*",
+        "fullyImplemented": true,
+        "id": 1109,
+        "linearizedBaseContracts": [
+          1109,
+          1938
+        ],
+        "name": "JoinSplit",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1107,
+              "nodeType": "Block",
+              "src": "2070:17076:2",
+              "statements": [
+                {
+                  "externalReferences": [],
+                  "id": 1100,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{\n    validateJoinSplit()\n    function validateJoinSplit()\n    {\n        mstore(0x80, calldataload(0x44))\n        mstore(0xa0, calldataload(0x64))\n        let notes := add(0x104, calldataload(0x184))\n        let m := calldataload(0x124)\n        let n := calldataload(notes)\n        let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n        let challenge := mod(calldataload(0x144), gen_order)\n        if gt(m, n)\n        {\n            mstore(0x00, 404)\n            revert(0x00, 0x20)\n        }\n        let kn := calldataload(sub(add(notes, mul(calldataload(notes), 0xc0)), 0xa0))\n        mstore(0x2a0, calldataload(0x24))\n        mstore(0x2c0, kn)\n        mstore(0x2e0, m)\n        mstore(0x300, calldataload(0x164))\n        kn := mulmod(sub(gen_order, kn), challenge, gen_order)\n        hashCommitments(notes, n)\n        let b := add(0x320, mul(n, 0x80))\n        for {\n            let i := 0\n        }\n        lt(i, n)\n        {\n            i := add(i, 0x01)\n        }\n        {\n            let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n            let k\n            let a := calldataload(add(noteIndex, 0x20))\n            let c := challenge\n            switch eq(add(i, 0x01), n)\n            case 1 {\n                k := kn\n                if eq(m, n)\n                {\n                    k := sub(gen_order, k)\n                }\n            }\n            case 0 {\n                k := calldataload(noteIndex)\n            }\n            validateCommitment(noteIndex, k, a)\n            switch gt(add(i, 0x01), m)\n            case 1 {\n                kn := addmod(kn, sub(gen_order, k), gen_order)\n                let x := mod(mload(0x00), gen_order)\n                k := mulmod(k, x, gen_order)\n                a := mulmod(a, x, gen_order)\n                c := mulmod(challenge, x, gen_order)\n                mstore(0x00, keccak256(0x00, 0x20))\n            }\n            case 0 {\n                kn := addmod(kn, k, gen_order)\n            }\n            calldatacopy(0xe0, add(noteIndex, 0x80), 0x40)\n            calldatacopy(0x20, add(noteIndex, 0x40), 0x40)\n            mstore(0x120, sub(gen_order, c))\n            mstore(0x60, k)\n            mstore(0xc0, a)\n            let result := staticcall(gas(), 7, 0xe0, 0x60, 0x1a0, 0x40)\n            result := and(result, staticcall(gas(), 7, 0x20, 0x60, 0x120, 0x40))\n            result := and(result, staticcall(gas(), 7, 0x80, 0x60, 0x160, 0x40))\n            result := and(result, staticcall(gas(), 6, 0x120, 0x80, 0x160, 0x40))\n            result := and(result, staticcall(gas(), 6, 0x160, 0x80, b, 0x40))\n            if eq(i, m)\n            {\n                mstore(0x260, mload(0x20))\n                mstore(0x280, mload(0x40))\n                mstore(0x1e0, mload(0xe0))\n                mstore(0x200, sub(0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47, mload(0x100)))\n            }\n            if gt(i, m)\n            {\n                mstore(0x60, c)\n                result := and(result, staticcall(gas(), 7, 0x20, 0x60, 0x220, 0x40))\n                result := and(result, staticcall(gas(), 6, 0x220, 0x80, 0x260, 0x40))\n                result := and(result, staticcall(gas(), 6, 0x1a0, 0x80, 0x1e0, 0x40))\n            }\n            if iszero(result)\n            {\n                mstore(0x00, 400)\n                revert(0x00, 0x20)\n            }\n            b := add(b, 0x40)\n        }\n        if lt(m, n)\n        {\n            validatePairing(0x84)\n        }\n        let expected := mod(keccak256(0x2a0, sub(b, 0x2a0)), gen_order)\n        if iszero(eq(expected, challenge))\n        {\n            mstore(0x00, 404)\n            revert(0x00, 0x20)\n        }\n    }\n    function validatePairing(t2)\n    {\n        let field_order := 0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47\n        let t2_x_1 := calldataload(t2)\n        let t2_x_2 := calldataload(add(t2, 0x20))\n        let t2_y_1 := calldataload(add(t2, 0x40))\n        let t2_y_2 := calldataload(add(t2, 0x60))\n        if or(or(or(or(or(or(or(iszero(t2_x_1), iszero(t2_x_2)), iszero(t2_y_1)), iszero(t2_y_2)), eq(t2_x_1, 0x1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed)), eq(t2_x_2, 0x198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c2)), eq(t2_y_1, 0x12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa)), eq(t2_y_2, 0x90689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n        mstore(0x20, mload(0x1e0))\n        mstore(0x40, mload(0x200))\n        mstore(0x80, 0x1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed)\n        mstore(0x60, 0x198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c2)\n        mstore(0xc0, 0x12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa)\n        mstore(0xa0, 0x90689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b)\n        mstore(0xe0, mload(0x260))\n        mstore(0x100, mload(0x280))\n        mstore(0x140, t2_x_1)\n        mstore(0x120, t2_x_2)\n        mstore(0x180, t2_y_1)\n        mstore(0x160, t2_y_2)\n        let success := staticcall(gas(), 8, 0x20, 0x180, 0x20, 0x20)\n        if or(iszero(success), iszero(mload(0x20)))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n    }\n    function validateCommitment(note, k, a)\n    {\n        let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n        let field_order := 0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47\n        let gammaX := calldataload(add(note, 0x40))\n        let gammaY := calldataload(add(note, 0x60))\n        let sigmaX := calldataload(add(note, 0x80))\n        let sigmaY := calldataload(add(note, 0xa0))\n        if iszero(and(and(and(eq(mod(a, gen_order), a), gt(a, 1)), and(eq(mod(k, gen_order), k), gt(k, 1))), and(eq(addmod(mulmod(mulmod(sigmaX, sigmaX, field_order), sigmaX, field_order), 3, field_order), mulmod(sigmaY, sigmaY, field_order)), eq(addmod(mulmod(mulmod(gammaX, gammaX, field_order), gammaX, field_order), 3, field_order), mulmod(gammaY, gammaY, field_order)))))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n    }\n    function hashCommitments(notes, n)\n    {\n        for {\n            let i := 0\n        }\n        lt(i, n)\n        {\n            i := add(i, 0x01)\n        }\n        {\n            let index := add(add(notes, mul(i, 0xc0)), 0x60)\n            calldatacopy(add(0x320, mul(i, 0x80)), index, 0x80)\n        }\n        mstore(0x00, keccak256(0x320, mul(n, 0x80)))\n    }\n}",
+                  "src": "2080:17025:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1104,
+                        "name": "EIP712_DOMAIN_HASH",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1864,
+                        "src": "19120:18:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1101,
+                        "name": "JoinSplitABIEncoder",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1120,
+                        "src": "19086:19:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_JoinSplitABIEncoder_$1120_$",
+                          "typeString": "type(library JoinSplitABIEncoder)"
+                        }
+                      },
+                      "id": 1103,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "encodeAndExit",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1119,
+                      "src": "19086:33:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) view"
+                      }
+                    },
+                    "id": 1105,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "19086:53:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1106,
+                  "nodeType": "ExpressionStatement",
+                  "src": "19086:53:2"
+                }
+              ]
+            },
+            "documentation": "@dev AZTEC will take any transaction sent to it and attempt to validate a zero knowledge proof.\nIf the proof is not valid, the transaction will throw.\n@notice See AZTECInterface for how method calls should be constructed.\n'Cost' of raw elliptic curve primitives for a transaction:\n260,700 gas + (124,500 * number of input notes) + (167,600 * number of output notes).\nFor a basic 'joinSplit' with 2 inputs and 2 outputs = 844,900 gas.\nAZTEC is written in YUL to enable manual memory management and for other efficiency savings.*",
+            "id": 1108,
+            "implemented": true,
+            "kind": "fallback",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1098,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2050:2:2"
+            },
+            "returnParameters": {
+              "id": 1099,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2070:0:2"
+            },
+            "scope": 1109,
+            "src": "2042:17104:2",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1110,
+        "src": "1410:17738:2"
+      }
+    ],
+    "src": "0:19149:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/ACE/validators/JoinSplit/JoinSplit.sol",
+    "exportedSymbols": {
+      "JoinSplit": [
+        1109
+      ],
+      "JoinSplitInterface": [
+        1095
+      ]
+    },
+    "id": 1110,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1070,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:2"
+      },
+      {
+        "absolutePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/ACE/validators/JoinSplit/JoinSplitABIEncoder.sol",
+        "file": "./JoinSplitABIEncoder.sol",
+        "id": 1071,
+        "nodeType": "ImportDirective",
+        "scope": 1110,
+        "sourceUnit": 1144,
+        "src": "33:35:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/libs/LibEIP712.sol",
+        "file": "../../../libs/LibEIP712.sol",
+        "id": 1072,
+        "nodeType": "ImportDirective",
+        "scope": 1110,
+        "sourceUnit": 1939,
+        "src": "69:37:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1073,
+              "name": "LibEIP712",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1938,
+              "src": "139:9:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LibEIP712_$1938",
+                "typeString": "contract LibEIP712"
+              }
+            },
+            "id": 1074,
+            "nodeType": "InheritanceSpecifier",
+            "src": "139:9:2"
+          }
+        ],
+        "contractDependencies": [
+          1938
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1095,
+        "linearizedBaseContracts": [
+          1095,
+          1938
+        ],
+        "name": "JoinSplitInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 1076,
+            "name": "EIP712_DOMAIN_HASH",
+            "nodeType": "VariableDeclaration",
+            "scope": 1095,
+            "src": "210:33:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 1075,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "210:7:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1079,
+              "nodeType": "Block",
+              "src": "271:2:2",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 1080,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1077,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "261:2:2"
+            },
+            "returnParameters": {
+              "id": 1078,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "271:0:2"
+            },
+            "scope": 1095,
+            "src": "250:23:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1093,
+              "nodeType": "Block",
+              "src": "454:2:2",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 1094,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "validateJoinSplit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1089,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1082,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1094,
+                  "src": "319:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1081,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "319:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1084,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1094,
+                  "src": "344:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1083,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "344:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1088,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1094,
+                  "src": "362:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$6_calldata_ptr",
+                    "typeString": "uint256[6]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1085,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "362:4:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 1087,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "36",
+                      "id": 1086,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "367:1:2",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": null,
+                        "typeString": null
+                      },
+                      "value": "6"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "362:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$6_storage_ptr",
+                      "typeString": "uint256[6]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "309:75:2"
+            },
+            "returnParameters": {
+              "id": 1092,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1091,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1094,
+                  "src": "435:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1090,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "435:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "434:14:2"
+            },
+            "scope": 1095,
+            "src": "283:173:2",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1110,
+        "src": "108:350:2"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1096,
+              "name": "LibEIP712",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1938,
+              "src": "1432:9:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LibEIP712_$1938",
+                "typeString": "contract LibEIP712"
+              }
+            },
+            "id": 1097,
+            "nodeType": "InheritanceSpecifier",
+            "src": "1432:9:2"
+          }
+        ],
+        "contractDependencies": [
+          1938
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Library to validate AZTEC zero-knowledge proofs\n@author Zachary Williamson, AZTEC\n@dev Don't include this as an internal library. This contract uses a static memory table to cache\nelliptic curve primitives and hashes.\nCalling this internally from another function will lead to memory mutation and undefined behaviour.\nThe intended use case is to call this externally via `staticcall`.\nExternal calls to OptimizedAZTEC can be treated as pure functions as this contract contains no\nstorage and makes no external calls (other than to precompiles)\nCopyright Spilsbury Holdings Ltd 2018. All rights reserved.\nWe will be releasing AZTEC as an open-source protocol that provides efficient transaction privacy for Ethereum.\nOur full vision of the protocol includes confidential cross-asset interactions via our\nfamily of AZTEC zero-knowledge proofs\nand the AZTEC token standard, stay tuned for updates!*",
+        "fullyImplemented": true,
+        "id": 1109,
+        "linearizedBaseContracts": [
+          1109,
+          1938
+        ],
+        "name": "JoinSplit",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1107,
+              "nodeType": "Block",
+              "src": "2070:17076:2",
+              "statements": [
+                {
+                  "externalReferences": [],
+                  "id": 1100,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{\n    validateJoinSplit()\n    function validateJoinSplit()\n    {\n        mstore(0x80, calldataload(0x44))\n        mstore(0xa0, calldataload(0x64))\n        let notes := add(0x104, calldataload(0x184))\n        let m := calldataload(0x124)\n        let n := calldataload(notes)\n        let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n        let challenge := mod(calldataload(0x144), gen_order)\n        if gt(m, n)\n        {\n            mstore(0x00, 404)\n            revert(0x00, 0x20)\n        }\n        let kn := calldataload(sub(add(notes, mul(calldataload(notes), 0xc0)), 0xa0))\n        mstore(0x2a0, calldataload(0x24))\n        mstore(0x2c0, kn)\n        mstore(0x2e0, m)\n        mstore(0x300, calldataload(0x164))\n        kn := mulmod(sub(gen_order, kn), challenge, gen_order)\n        hashCommitments(notes, n)\n        let b := add(0x320, mul(n, 0x80))\n        for {\n            let i := 0\n        }\n        lt(i, n)\n        {\n            i := add(i, 0x01)\n        }\n        {\n            let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n            let k\n            let a := calldataload(add(noteIndex, 0x20))\n            let c := challenge\n            switch eq(add(i, 0x01), n)\n            case 1 {\n                k := kn\n                if eq(m, n)\n                {\n                    k := sub(gen_order, k)\n                }\n            }\n            case 0 {\n                k := calldataload(noteIndex)\n            }\n            validateCommitment(noteIndex, k, a)\n            switch gt(add(i, 0x01), m)\n            case 1 {\n                kn := addmod(kn, sub(gen_order, k), gen_order)\n                let x := mod(mload(0x00), gen_order)\n                k := mulmod(k, x, gen_order)\n                a := mulmod(a, x, gen_order)\n                c := mulmod(challenge, x, gen_order)\n                mstore(0x00, keccak256(0x00, 0x20))\n            }\n            case 0 {\n                kn := addmod(kn, k, gen_order)\n            }\n            calldatacopy(0xe0, add(noteIndex, 0x80), 0x40)\n            calldatacopy(0x20, add(noteIndex, 0x40), 0x40)\n            mstore(0x120, sub(gen_order, c))\n            mstore(0x60, k)\n            mstore(0xc0, a)\n            let result := staticcall(gas(), 7, 0xe0, 0x60, 0x1a0, 0x40)\n            result := and(result, staticcall(gas(), 7, 0x20, 0x60, 0x120, 0x40))\n            result := and(result, staticcall(gas(), 7, 0x80, 0x60, 0x160, 0x40))\n            result := and(result, staticcall(gas(), 6, 0x120, 0x80, 0x160, 0x40))\n            result := and(result, staticcall(gas(), 6, 0x160, 0x80, b, 0x40))\n            if eq(i, m)\n            {\n                mstore(0x260, mload(0x20))\n                mstore(0x280, mload(0x40))\n                mstore(0x1e0, mload(0xe0))\n                mstore(0x200, sub(0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47, mload(0x100)))\n            }\n            if gt(i, m)\n            {\n                mstore(0x60, c)\n                result := and(result, staticcall(gas(), 7, 0x20, 0x60, 0x220, 0x40))\n                result := and(result, staticcall(gas(), 6, 0x220, 0x80, 0x260, 0x40))\n                result := and(result, staticcall(gas(), 6, 0x1a0, 0x80, 0x1e0, 0x40))\n            }\n            if iszero(result)\n            {\n                mstore(0x00, 400)\n                revert(0x00, 0x20)\n            }\n            b := add(b, 0x40)\n        }\n        if lt(m, n)\n        {\n            validatePairing(0x84)\n        }\n        let expected := mod(keccak256(0x2a0, sub(b, 0x2a0)), gen_order)\n        if iszero(eq(expected, challenge))\n        {\n            mstore(0x00, 404)\n            revert(0x00, 0x20)\n        }\n    }\n    function validatePairing(t2)\n    {\n        let field_order := 0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47\n        let t2_x_1 := calldataload(t2)\n        let t2_x_2 := calldataload(add(t2, 0x20))\n        let t2_y_1 := calldataload(add(t2, 0x40))\n        let t2_y_2 := calldataload(add(t2, 0x60))\n        if or(or(or(or(or(or(or(iszero(t2_x_1), iszero(t2_x_2)), iszero(t2_y_1)), iszero(t2_y_2)), eq(t2_x_1, 0x1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed)), eq(t2_x_2, 0x198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c2)), eq(t2_y_1, 0x12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa)), eq(t2_y_2, 0x90689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n        mstore(0x20, mload(0x1e0))\n        mstore(0x40, mload(0x200))\n        mstore(0x80, 0x1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed)\n        mstore(0x60, 0x198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c2)\n        mstore(0xc0, 0x12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa)\n        mstore(0xa0, 0x90689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b)\n        mstore(0xe0, mload(0x260))\n        mstore(0x100, mload(0x280))\n        mstore(0x140, t2_x_1)\n        mstore(0x120, t2_x_2)\n        mstore(0x180, t2_y_1)\n        mstore(0x160, t2_y_2)\n        let success := staticcall(gas(), 8, 0x20, 0x180, 0x20, 0x20)\n        if or(iszero(success), iszero(mload(0x20)))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n    }\n    function validateCommitment(note, k, a)\n    {\n        let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n        let field_order := 0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47\n        let gammaX := calldataload(add(note, 0x40))\n        let gammaY := calldataload(add(note, 0x60))\n        let sigmaX := calldataload(add(note, 0x80))\n        let sigmaY := calldataload(add(note, 0xa0))\n        if iszero(and(and(and(eq(mod(a, gen_order), a), gt(a, 1)), and(eq(mod(k, gen_order), k), gt(k, 1))), and(eq(addmod(mulmod(mulmod(sigmaX, sigmaX, field_order), sigmaX, field_order), 3, field_order), mulmod(sigmaY, sigmaY, field_order)), eq(addmod(mulmod(mulmod(gammaX, gammaX, field_order), gammaX, field_order), 3, field_order), mulmod(gammaY, gammaY, field_order)))))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n    }\n    function hashCommitments(notes, n)\n    {\n        for {\n            let i := 0\n        }\n        lt(i, n)\n        {\n            i := add(i, 0x01)\n        }\n        {\n            let index := add(add(notes, mul(i, 0xc0)), 0x60)\n            calldatacopy(add(0x320, mul(i, 0x80)), index, 0x80)\n        }\n        mstore(0x00, keccak256(0x320, mul(n, 0x80)))\n    }\n}",
+                  "src": "2080:17025:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1104,
+                        "name": "EIP712_DOMAIN_HASH",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1864,
+                        "src": "19120:18:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1101,
+                        "name": "JoinSplitABIEncoder",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1120,
+                        "src": "19086:19:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_JoinSplitABIEncoder_$1120_$",
+                          "typeString": "type(library JoinSplitABIEncoder)"
+                        }
+                      },
+                      "id": 1103,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "encodeAndExit",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1119,
+                      "src": "19086:33:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) view"
+                      }
+                    },
+                    "id": 1105,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "19086:53:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1106,
+                  "nodeType": "ExpressionStatement",
+                  "src": "19086:53:2"
+                }
+              ]
+            },
+            "documentation": "@dev AZTEC will take any transaction sent to it and attempt to validate a zero knowledge proof.\nIf the proof is not valid, the transaction will throw.\n@notice See AZTECInterface for how method calls should be constructed.\n'Cost' of raw elliptic curve primitives for a transaction:\n260,700 gas + (124,500 * number of input notes) + (167,600 * number of output notes).\nFor a basic 'joinSplit' with 2 inputs and 2 outputs = 844,900 gas.\nAZTEC is written in YUL to enable manual memory management and for other efficiency savings.*",
+            "id": 1108,
+            "implemented": true,
+            "kind": "fallback",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1098,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2050:2:2"
+            },
+            "returnParameters": {
+              "id": 1099,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2070:0:2"
+            },
+            "scope": 1109,
+            "src": "2042:17104:2",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1110,
+        "src": "1410:17738:2"
+      }
+    ],
+    "src": "0:19149:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.4+commit.9549d8ff.Emscripten.clang"
+  },
+  "networks": {
+    "1551589700085": {
+      "events": {},
+      "links": {},
+      "address": "0x2247020190a572B48506C6ca19d203E07135B2d8",
+      "transactionHash": "0xc3ed7331c927d144e511ee925db3dd161fb7a1ccb0cd2dd8450aaba955f75c8e"
+    }
+  },
+  "schemaVersion": "3.0.2",
+  "updatedAt": "2019-03-03T05:16:20.285Z",
+  "devdoc": {
+    "author": "Zachary Williamson, AZTEC",
+    "details": "Don't include this as an internal library. This contract uses a static memory table to cache elliptic curve primitives and hashes. Calling this internally from another function will lead to memory mutation and undefined behaviour. The intended use case is to call this externally via `staticcall`. External calls to OptimizedAZTEC can be treated as pure functions as this contract contains no storage and makes no external calls (other than to precompiles) Copyright Spilsbury Holdings Ltd 2018. All rights reserved. We will be releasing AZTEC as an open-source protocol that provides efficient transaction privacy for Ethereum. Our full vision of the protocol includes confidential cross-asset interactions via our family of AZTEC zero-knowledge proofs and the AZTEC token standard, stay tuned for updates!*",
+    "methods": {},
+    "title": "Library to validate AZTEC zero-knowledge proofs"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

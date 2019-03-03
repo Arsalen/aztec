@@ -1,0 +1,8 @@
+
+{
+    "keys": [
+        {"address": "0x9bED2465747D371f0aC35ABFA964D721c450891F", "private": "0x6eae3b293efb52b8df56d7d65e983d01f29008989db24d673bbfd17ebf67acda"},
+        {"address": "0xd28C0317572ba3EaA35feE0847A57a4176f4139A", "private": "0xe402f063ea04bd83fb65140db7f29689d15b526205ef9bbe6edfab088c58ddb7"},
+        {"address": "0x776Cb3251eAce4D5DC33f717325BF51d883746f5", "private": "0x16f45c5d897d17c0e6888de899073782c3c42601bcaae4fca3f76a61b81f10bb"}
+    ]
+}

@@ -1,0 +1,695 @@
+{
+  "contractName": "BilateralSwapABIEncoderTest",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes"
+        },
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "uint256[6]"
+        }
+      ],
+      "name": "validateBilateralSwap",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506103b5806100206000396000f3fe608060405234801561001057600080fd5b5060043610610047577c010000000000000000000000000000000000000000000000000000000060003504636b9cc11d811461004c575b600080fd5b6100d8600480360361010081101561006357600080fd5b81019060208101813564010000000081111561007e57600080fd5b82018360208201111561009057600080fd5b803590602001918460018302840111640100000000831117156100b257600080fd5b919350915073ffffffffffffffffffffffffffffffffffffffff8135169060200161014d565b6040805160208082528351818301528351919283929083019185019080838360005b838110156101125781810151838201526020016100fa565b50505050905090810190601f16801561013f5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b606061015761015f565b949350505050565b610144356101040160028135610164356101240161018435610124016101a435610144017f6c1a087ea32e7586c4241d8ad29826c79af0e5ae5c44ca4be88caa5a18b99446608052600160a0526101243560e052602435610100526119016101205260016101a05260606101c05260a06102005260006102405260008061026052610280866020820152602087026102c00160005b888110156102865760c0810260208b0101608060408201600037608060002060c05260a0835260208202880135602084015260c05160408401526040606084015260ff60020a600160608301351602604082013517608084015260ff60020a600160a0830135160260808201351760a08401528383036020830260408601015260c083019250506001810190506101f4565b50908103601f1981016102805260a00161022052868603602080830182905260409102820101875b8781101561035b5760c0810260208b010160208a830302860135806040880301356080604084016000378060a001855260208c85030289013560208601526080600020604086015280604001606086015260ff60020a6001602051160260005117608086015260ff60020a600160605116026040511760a08601528060208903830160c087013785850360208d8603026040880101526020855101850194505050506001810190506102ae565b5060208282030382526102808103806080016101e0528060e001610180526020610160528061012001610160f3fea165627a7a723058202e65a4062e63b33481514393d26bf39cf520b737c0f35b6034639845adbbec880029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b5060043610610047577c010000000000000000000000000000000000000000000000000000000060003504636b9cc11d811461004c575b600080fd5b6100d8600480360361010081101561006357600080fd5b81019060208101813564010000000081111561007e57600080fd5b82018360208201111561009057600080fd5b803590602001918460018302840111640100000000831117156100b257600080fd5b919350915073ffffffffffffffffffffffffffffffffffffffff8135169060200161014d565b6040805160208082528351818301528351919283929083019185019080838360005b838110156101125781810151838201526020016100fa565b50505050905090810190601f16801561013f5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b606061015761015f565b949350505050565b610144356101040160028135610164356101240161018435610124016101a435610144017f6c1a087ea32e7586c4241d8ad29826c79af0e5ae5c44ca4be88caa5a18b99446608052600160a0526101243560e052602435610100526119016101205260016101a05260606101c05260a06102005260006102405260008061026052610280866020820152602087026102c00160005b888110156102865760c0810260208b0101608060408201600037608060002060c05260a0835260208202880135602084015260c05160408401526040606084015260ff60020a600160608301351602604082013517608084015260ff60020a600160a0830135160260808201351760a08401528383036020830260408601015260c083019250506001810190506101f4565b50908103601f1981016102805260a00161022052868603602080830182905260409102820101875b8781101561035b5760c0810260208b010160208a830302860135806040880301356080604084016000378060a001855260208c85030289013560208601526080600020604086015280604001606086015260ff60020a6001602051160260005117608086015260ff60020a600160605116026040511760a08601528060208903830160c087013785850360208d8603026040880101526020855101850194505050506001810190506102ae565b5060208282030382526102808103806080016101e0528060e001610180526020610160528061012001610160f3fea165627a7a723058202e65a4062e63b33481514393d26bf39cf520b737c0f35b6034639845adbbec880029",
+  "sourceMap": "10181:276:5:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;10181:276:5;;;;;;;",
+  "deployedSourceMap": "10181:276:5:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;10181:276:5;;;;;;;;;;;;;;;;;;;10224:231;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;10224:231:5;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;10224:231:5;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;10224:231:5;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;10224:231:5;;-1:-1:-1;10224:231:5;-1:-1:-1;10224:231:5;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;10224:231:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;10380:12;10409:39;:37;:39::i;:::-;10224:231;;;;;;:::o;836:9340::-;985:5;972:19;965:5;961:31;1014:1;1065:5;1052:19;1127:5;1114:19;1107:5;1103:31;1230:5;1217:19;1210:5;1206:31;1327:5;1314:19;1307:5;1303:31;1810:66;1804:4;1797:80;1903:4;1897;1890:18;1947:5;1934:19;1928:4;1921:33;2007:4;1994:18;1987:5;1980:33;2205:6;2198:5;2191:21;4100:4;4093:5;4086:19;4179:4;4172:5;4165:19;4313:4;4306:5;4299:19;4398:4;4391:5;4384:19;4460:1;4488:7;4481:5;4474:22;4526:5;4627:1;4620:4;4610:8;4606:19;4599:30;4797:4;4794:1;4790:12;4783:5;4779:24;4832:1;4817:2045;4842:1;4839;4836:8;4817:2045;;;4931:4;4928:1;4924:12;4917:4;4910:5;4906:16;4902:35;5045:4;5038;5027:9;5023:20;5017:4;5004:46;5164:4;5158;5148:21;5142:4;5135:35;5243:4;5240:1;5233:15;5439:4;5436:1;5432:12;5419:11;5415:30;5402:44;5395:4;5392:1;5388:12;5381:66;5557:4;5551:11;5544:4;5541:1;5537:12;5530:33;5684:4;5677;5674:1;5670:12;5663:26;-1:-1:-1;;;5977:4:5;5969;5958:9;5954:20;5941:34;5937:45;5912:180;5884:4;5873:9;5869:20;5856:34;5832:278;5809:4;5806:1;5802:12;5778:350;-1:-1:-1;;;6416:4:5;6408;6397:9;6393:20;6380:34;6376:45;6351:180;6323:4;6312:9;6308:20;6295:34;6271:278;6248:4;6245:1;6241:12;6217:350;6722:8;6719:1;6715:16;6707:4;6704:1;6700:12;6693:4;6683:8;6679:19;6675:38;6668:64;6842:4;6839:1;6835:12;6830:17;;4867:1995;4859:4;4856:1;4852:12;4847:17;;4817:2045;;;-1:-1:-1;6951:16:5;;;-1:-1:-1;;6947:27:5;;6940:5;6933:42;7072:4;7068:27;7061:5;7054:42;7210:9;;;6969:4;7189:19;;;7182:38;;;7281:4;7287:20;;7270:39;;;7210:9;7323:2314;7348:1;7345;7342:8;7323:2314;;;7471:4;7468:1;7464:12;7457:4;7450:5;7446:16;7442:35;7601:4;7597:1;7594;7590:9;7586:20;7576:8;7572:35;7559:49;7727:13;7720:4;7710:8;7706:19;7702:39;7689:53;7850:4;7843;7832:9;7828:20;7822:4;7809:46;7957:14;7951:4;7947:25;7944:1;7937:36;8118:4;8114:1;8111;8107:9;8103:20;8089:12;8085:39;8072:53;8065:4;8062:1;8058:12;8051:75;8215:4;8209;8199:21;8192:4;8189:1;8185:12;8178:43;8329:14;8323:4;8319:25;8312:4;8309:1;8305:12;8298:47;-1:-1:-1;;;8611:4:5;8604;8598:11;8594:22;8561:177;8530:4;8524:11;8496:264;8469:4;8466:1;8462:12;8434:344;-1:-1:-1;;;9024:4:5;9017;9011:11;9007:22;8978:165;8951:4;8945:11;8921:240;8898:4;8895:1;8891:12;8867:312;9313:14;9305:4;9295:8;9291:19;9276:13;9272:39;9265:4;9262:1;9258:12;9245:83;9491:8;9488:1;9484:16;9476:4;9472:1;9469;9465:9;9461:20;9454:4;9444:8;9440:19;9436:46;9429:72;9617:4;9613:1;9607:8;9603:19;9600:1;9596:27;9591:32;;7373:2264;;;7365:4;7362:1;7358:12;7353:17;;7323:2314;;;7327:14;9759:4;9748:8;9745:1;9741:16;9737:27;9727:8;9720:45;9859:5;9856:1;9852:13;9902:11;9896:4;9892:22;9885:5;9878:37;9992:11;9986:4;9982:22;9975:5;9968:37;10073:4;10066:5;10059:19;10116:11;10109:5;10105:23;10098:5;10091:38",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n\nlibrary BilateralSwapABIEncoder {\n    /**\n    * New calldata map\n    * 0x04:0x24      = calldata location of proofData byte array - pointer to the proofData. \n    * 0x24:0x44      = message sender // sender\n    * 0x44:0x64      = h_x     // crs\n    * 0x64:0x84      = h_y     // crs\n    * 0x84:0xa4      = t2_x0   // crs\n    * 0xa4:0xc4      = t2_x1   // crs\n    * 0xa4:0xc4      = t2_x1   // crs\n    * 0xc4:0xe4      = t2_y0   // crs\n    * 0xe4:0x104     = t2_y1   // crs\n    * 0x104:0x124    = length of proofData byte array \n    * 0x124:0x144    = challenge\n    * 0x144:0x164    = offset in byte array to notes\n    * 0x164:0x184    = offset in byte array to inputOwners\n    * 0x184:0x1a4    = offset in byte array to outputOwners\n    * 0x1a4:0x1c4    = offset in byte array to metadata\n    **/\n\n    function encodeAndExit() internal pure {\n        assembly {\n            // set up initial variables\n            let notes := add(0x104, calldataload(0x144))\n            let m := 2 // input notes\n            let n := calldataload(notes)\n            let inputOwners := add(0x124, calldataload(0x164)) // // one word after inputOwners = 1st\n            let outputOwners := add(0x124, calldataload(0x184)) // one word after outputOwners = 1st\n            let metadata := add(0x144, calldataload(0x1a4)) // two words after metadata = 1st\n\n            // memory map of `proofOutputs`\n            // 0x00 - 0x160  = scratch data for EIP712 signature computation and note hash computation\n            // ACE_NOTE_SIGNATURE struct hash variables\n            // 0x80 = struct hash\n            // 0xa0 = proofId (1)\n            // 0xc0 = noteHash\n            // 0xe0 = challenge\n            // 0x100 = sender\n            // struct hash of 'ACE_NOTE_SIGNATURE'\n            mstore(0x80, 0x6c1a087ea32e7586c4241d8ad29826c79af0e5ae5c44ca4be88caa5a18b99446)\n            mstore(0xa0, 0x01)\n            mstore(0xe0, calldataload(0x124)) // challenge\n            mstore(0x100, calldataload(0x24))\n\n            // EIP712 Signature variables\n            // 0x13e - 0x140 = 0x1901\n            // 0x140 - 0x160 = domainHash\n            // 0x160 - 0x180 = structHash\n            mstore(0x120, 0x1901)\n\n            // `returndata` starts at 0x160\n            // `proofOutputs` starts at 0x180\n            // 0x160 - 0x180 = relative offset in returndata to first bytes argument (0x20)\n            // 0x180 - 0x1a0 = byte length of `proofOutputs`\n            // 0x1a0 - 0x1c0 = number of `proofOutputs` entries (1)\n            // 0x1c0 - 0x1e0 = relative memory offset between `v` and start of `proofOutput`\n\n            // `proofOutput` - t, starts at 0x1e0\n            // 0x1e0 - 0x200 = length of `proofOutput`\n            // 0x200 - 0x220 = relative offset between `t` and `inputNotes`\n            // 0x220 - 0x240 = relative offset between `t` and `outputNotes`\n            // 0x240 - 0x260 = `publicOwner`\n            // 0x260 - 0x280 = `publicValue`\n\n            // `inputNotes` starts at 0x280\n            // structure of `inputNotes` and `outputNotes`\n            // 0x00 - 0x20 = byte length of notes array\n            // 0x20 - 0x40 = number of notes `i`\n            // the next `i` consecutive blocks of 0x20-sized memory contain relative offset between\n            // start of notes array and the location of the `note`\n\n            // structure of a `note`\n            // 0x00 - 0x20 = size of `note`\n            // 0x20 - 0x40 = `owner`\n            // 0x40 - 0x60 = `noteHash`\n            // 0x60 - 0x80 = size of note `data`\n            // 0x80 - 0xa0 = compressed note coordinate `gamma` (part of `data`)\n            // 0xa0 - 0xc0 = compressed note coordinate `sigma` (part of `data`)\n            // 0xc0 - ???? = remaining note metadata\n\n            // `proofOutputs` must form a monolithic block of memory that we can return.\n            // `s` points to the memory location of the start of the current note\n            // `inputPtr` points to the start of the current `notes` dynamic bytes array\n\n            // length of proofOutputs is at s\n            mstore(0x1a0, 0x01)                            // number of proofs\n            mstore(0x1c0, 0x60)                            // offset to 1st proof\n            // length of proofOutput is at s + 0x60\n            mstore(0x200, 0xa0)                            // location of inputNotes\n            mstore(0x240, 0x00)             // publicOwner\n \n            let kPublic := 0\n            mstore(0x260, kPublic)\n\n            let inputPtr := 0x280                                 // point to inputNotes\n            mstore(add(inputPtr, 0x20), m)                        // number of input notes\n\n            // set note pointer, offsetting lookup indices for each input note\n            let s := add(0x2c0, mul(m, 0x20))\n\n            for { let i := 0 } lt(i, m) { i := add(i, 0x01) } {\n                let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n\n                // copy note data to 0x00 - 0x80\n                calldatacopy(0x00, add(noteIndex, 0x40), 0x80) // get gamma, sigma\n\n                // construct hash of note data\n                mstore(0xc0, keccak256(0x00, 0x80)) \n\n                // store note length in `s`\n                mstore(s, 0xa0)\n                // store note owner in `s + 0x20`. If there is no owners, or signing address is `0`, throw an error\n                mstore(add(s, 0x20), calldataload(add(inputOwners, mul(i, 0x20))))\n                \n                // store note hash in `s + 0x40`\n                mstore(add(s, 0x40), mload(0xc0))\n                // store note metadata length in `s + 0x60` (just the coordinates)\n                mstore(add(s, 0x60), 0x40)\n                // store compressed note coordinate gamma in `s + 0x80`\n                mstore(\n                add(s, 0x80),\n                or(\n                    calldataload(add(noteIndex, 0x40)),\n                    mul(\n                    and(calldataload(add(noteIndex, 0x60)), 0x01),\n                    0x8000000000000000000000000000000000000000000000000000000000000000\n                    )\n                )\n                )\n                // store compressed note coordinate sigma in `s + 0xa0`\n                mstore(\n                add(s, 0xa0),\n                or(\n                    calldataload(add(noteIndex, 0x80)),\n                    mul(\n                    and(calldataload(add(noteIndex, 0xa0)), 0x01),\n                    0x8000000000000000000000000000000000000000000000000000000000000000\n                    )\n                )\n                )\n                // compute the relative offset to index this note in our returndata\n                mstore(add(add(inputPtr, 0x40), mul(i, 0x20)), sub(s, inputPtr)) // relative offset to note\n        \n                // increase s by note length\n                s := add(s, 0xc0)\n\n            }\n\n            // transition between input and output notes\n            mstore(0x280, sub(sub(s, inputPtr), 0x20)) // store total length of inputNotes at first index of inputNotes \n            mstore(0x220, add(0xa0, sub(s, inputPtr))) // store relative memory offset to outputNotes\n            inputPtr := s\n            mstore(add(inputPtr, 0x20), sub(n, m)) // store number of output notes\n            s := add(s, add(0x40, mul(sub(n, m), 0x20)))\n\n            for { let i := m } lt(i, n) { i := add(i, 0x01) } {\n                // get note index\n                let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n\n                // get pointer to metadata\n                let metadataIndex := calldataload(add(metadata, mul(sub(i, m), 0x20)))\n \n                // get size of metadata\n                let metadataLength := calldataload(add(sub(metadata, 0x40), metadataIndex))\n\n                // copy note data to 0x00 - 0x80\n                calldatacopy(0x00, add(noteIndex, 0x40), 0x80) // get gamma, sigma\n\n                // store note length in `s`\n                mstore(s, add(0xa0, metadataLength))\n                // store the owner of the note in `s + 0x20`\n                mstore(add(s, 0x20), calldataload(add(outputOwners, mul(sub(i, m), 0x20))))\n                // store note hash\n                mstore(add(s, 0x40), keccak256(0x00, 0x80))\n                // store note metadata length if `s + 0x60`\n                mstore(add(s, 0x60), add(0x40, metadataLength))\n                // store compressed note coordinate gamma in `s + 0x80`\n                mstore(\n                    add(s, 0x80),\n                    or(\n                        mload(0x00),\n                        mul(\n                            and(mload(0x20), 0x01),\n                            0x8000000000000000000000000000000000000000000000000000000000000000\n                        )\n                    )\n                )\n                // store compressed note coordinate sigma in `s + 0xa0`\n                mstore(\n                add(s, 0xa0),\n                or(\n                    mload(0x40),\n                    mul(\n                        and(mload(0x60), 0x01),\n                        0x8000000000000000000000000000000000000000000000000000000000000000\n                    )\n                )\n                )\n                // copy metadata into `s + 0xc0`\n                calldatacopy(add(s, 0xc0), add(metadataIndex, sub(metadata, 0x20)), metadataLength)\n                // compute the relative offset to index this note in our returndata\n                mstore(add(add(inputPtr, 0x40), mul(sub(i, m), 0x20)), sub(s, inputPtr)) // relative offset to note\n\n                // increase s by note length\n                s := add(s, add(mload(s), 0x20))\n            }\n\n            // cleanup. the length of the outputNotes = s - inputPtr\n            mstore(inputPtr, sub(sub(s, inputPtr), 0x20)) // store length of outputNotes at start of outputNotes\n            let notesLength := sub(s, 0x280)\n            mstore(0x1e0, add(0x80, notesLength)) // store length of proofOutput at 0x160\n            mstore(0x180, add(0xe0, notesLength)) // store length of proofOutputs at 0x100\n            mstore(0x160, 0x20)\n            return(0x160, add(0x120, notesLength)) // return the final byte array\n        }\n    }\n}\n\n\ncontract BilateralSwapABIEncoderTest {\n    function validateBilateralSwap(\n        bytes calldata, \n        address, \n        uint[6] calldata\n    ) \n        external \n        pure \n        returns (bytes memory) \n    {\n        BilateralSwapABIEncoder.encodeAndExit();\n    }\n}\n",
+  "sourcePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/ACE/validators/bilateralSwap/BilateralSwapABIEncoder.sol",
+  "ast": {
+    "absolutePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/ACE/validators/bilateralSwap/BilateralSwapABIEncoder.sol",
+    "exportedSymbols": {
+      "BilateralSwapABIEncoder": [
+        1180
+      ],
+      "BilateralSwapABIEncoderTest": [
+        1200
+      ]
+    },
+    "id": 1201,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1174,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:5"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1180,
+        "linearizedBaseContracts": [
+          1180
+        ],
+        "name": "BilateralSwapABIEncoder",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1178,
+              "nodeType": "Block",
+              "src": "875:9301:5",
+              "statements": [
+                {
+                  "externalReferences": [],
+                  "id": 1177,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{\n    let notes := add(0x104, calldataload(0x144))\n    let m := 2\n    let n := calldataload(notes)\n    let inputOwners := add(0x124, calldataload(0x164))\n    let outputOwners := add(0x124, calldataload(0x184))\n    let metadata := add(0x144, calldataload(0x1a4))\n    mstore(0x80, 0x6c1a087ea32e7586c4241d8ad29826c79af0e5ae5c44ca4be88caa5a18b99446)\n    mstore(0xa0, 0x01)\n    mstore(0xe0, calldataload(0x124))\n    mstore(0x100, calldataload(0x24))\n    mstore(0x120, 0x1901)\n    mstore(0x1a0, 0x01)\n    mstore(0x1c0, 0x60)\n    mstore(0x200, 0xa0)\n    mstore(0x240, 0x00)\n    let kPublic := 0\n    mstore(0x260, kPublic)\n    let inputPtr := 0x280\n    mstore(add(inputPtr, 0x20), m)\n    let s := add(0x2c0, mul(m, 0x20))\n    for {\n        let i := 0\n    }\n    lt(i, m)\n    {\n        i := add(i, 0x01)\n    }\n    {\n        let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n        calldatacopy(0x00, add(noteIndex, 0x40), 0x80)\n        mstore(0xc0, keccak256(0x00, 0x80))\n        mstore(s, 0xa0)\n        mstore(add(s, 0x20), calldataload(add(inputOwners, mul(i, 0x20))))\n        mstore(add(s, 0x40), mload(0xc0))\n        mstore(add(s, 0x60), 0x40)\n        mstore(add(s, 0x80), or(calldataload(add(noteIndex, 0x40)), mul(and(calldataload(add(noteIndex, 0x60)), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(s, 0xa0), or(calldataload(add(noteIndex, 0x80)), mul(and(calldataload(add(noteIndex, 0xa0)), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(add(inputPtr, 0x40), mul(i, 0x20)), sub(s, inputPtr))\n        s := add(s, 0xc0)\n    }\n    mstore(0x280, sub(sub(s, inputPtr), 0x20))\n    mstore(0x220, add(0xa0, sub(s, inputPtr)))\n    inputPtr := s\n    mstore(add(inputPtr, 0x20), sub(n, m))\n    s := add(s, add(0x40, mul(sub(n, m), 0x20)))\n    for {\n        let i := m\n    }\n    lt(i, n)\n    {\n        i := add(i, 0x01)\n    }\n    {\n        let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n        let metadataIndex := calldataload(add(metadata, mul(sub(i, m), 0x20)))\n        let metadataLength := calldataload(add(sub(metadata, 0x40), metadataIndex))\n        calldatacopy(0x00, add(noteIndex, 0x40), 0x80)\n        mstore(s, add(0xa0, metadataLength))\n        mstore(add(s, 0x20), calldataload(add(outputOwners, mul(sub(i, m), 0x20))))\n        mstore(add(s, 0x40), keccak256(0x00, 0x80))\n        mstore(add(s, 0x60), add(0x40, metadataLength))\n        mstore(add(s, 0x80), or(mload(0x00), mul(and(mload(0x20), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(s, 0xa0), or(mload(0x40), mul(and(mload(0x60), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        calldatacopy(add(s, 0xc0), add(metadataIndex, sub(metadata, 0x20)), metadataLength)\n        mstore(add(add(inputPtr, 0x40), mul(sub(i, m), 0x20)), sub(s, inputPtr))\n        s := add(s, add(mload(s), 0x20))\n    }\n    mstore(inputPtr, sub(sub(s, inputPtr), 0x20))\n    let notesLength := sub(s, 0x280)\n    mstore(0x1e0, add(0x80, notesLength))\n    mstore(0x180, add(0xe0, notesLength))\n    mstore(0x160, 0x20)\n    return(0x160, add(0x120, notesLength))\n}",
+                  "src": "885:9291:5"
+                }
+              ]
+            },
+            "documentation": "New calldata map\n0x04:0x24      = calldata location of proofData byte array - pointer to the proofData. \n0x24:0x44      = message sender // sender\n0x44:0x64      = h_x     // crs\n0x64:0x84      = h_y     // crs\n0x84:0xa4      = t2_x0   // crs\n0xa4:0xc4      = t2_x1   // crs\n0xa4:0xc4      = t2_x1   // crs\n0xc4:0xe4      = t2_y0   // crs\n0xe4:0x104     = t2_y1   // crs\n0x104:0x124    = length of proofData byte array \n0x124:0x144    = challenge\n0x144:0x164    = offset in byte array to notes\n0x164:0x184    = offset in byte array to inputOwners\n0x184:0x1a4    = offset in byte array to outputOwners\n0x1a4:0x1c4    = offset in byte array to metadata*",
+            "id": 1179,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "encodeAndExit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1175,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "858:2:5"
+            },
+            "returnParameters": {
+              "id": 1176,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "875:0:5"
+            },
+            "scope": 1180,
+            "src": "836:9340:5",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 1201,
+        "src": "34:10144:5"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1200,
+        "linearizedBaseContracts": [
+          1200
+        ],
+        "name": "BilateralSwapABIEncoderTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1198,
+              "nodeType": "Block",
+              "src": "10399:56:5",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1193,
+                        "name": "BilateralSwapABIEncoder",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1180,
+                        "src": "10409:23:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_BilateralSwapABIEncoder_$1180_$",
+                          "typeString": "type(library BilateralSwapABIEncoder)"
+                        }
+                      },
+                      "id": 1195,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "encodeAndExit",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1179,
+                      "src": "10409:37:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$__$returns$__$",
+                        "typeString": "function () pure"
+                      }
+                    },
+                    "id": 1196,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "10409:39:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1197,
+                  "nodeType": "ExpressionStatement",
+                  "src": "10409:39:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1199,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "validateBilateralSwap",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1189,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1182,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1199,
+                  "src": "10264:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1181,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10264:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1184,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1199,
+                  "src": "10289:7:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1183,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10289:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1188,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1199,
+                  "src": "10307:16:5",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$6_calldata_ptr",
+                    "typeString": "uint256[6]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1185,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "10307:4:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 1187,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "36",
+                      "id": 1186,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "10312:1:5",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": null,
+                        "typeString": null
+                      },
+                      "value": "6"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "10307:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$6_storage_ptr",
+                      "typeString": "uint256[6]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10254:75:5"
+            },
+            "returnParameters": {
+              "id": 1192,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1191,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1199,
+                  "src": "10380:12:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1190,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10380:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10379:14:5"
+            },
+            "scope": 1200,
+            "src": "10224:231:5",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1201,
+        "src": "10181:276:5"
+      }
+    ],
+    "src": "0:10458:5"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/ACE/validators/bilateralSwap/BilateralSwapABIEncoder.sol",
+    "exportedSymbols": {
+      "BilateralSwapABIEncoder": [
+        1180
+      ],
+      "BilateralSwapABIEncoderTest": [
+        1200
+      ]
+    },
+    "id": 1201,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1174,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:5"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1180,
+        "linearizedBaseContracts": [
+          1180
+        ],
+        "name": "BilateralSwapABIEncoder",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1178,
+              "nodeType": "Block",
+              "src": "875:9301:5",
+              "statements": [
+                {
+                  "externalReferences": [],
+                  "id": 1177,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{\n    let notes := add(0x104, calldataload(0x144))\n    let m := 2\n    let n := calldataload(notes)\n    let inputOwners := add(0x124, calldataload(0x164))\n    let outputOwners := add(0x124, calldataload(0x184))\n    let metadata := add(0x144, calldataload(0x1a4))\n    mstore(0x80, 0x6c1a087ea32e7586c4241d8ad29826c79af0e5ae5c44ca4be88caa5a18b99446)\n    mstore(0xa0, 0x01)\n    mstore(0xe0, calldataload(0x124))\n    mstore(0x100, calldataload(0x24))\n    mstore(0x120, 0x1901)\n    mstore(0x1a0, 0x01)\n    mstore(0x1c0, 0x60)\n    mstore(0x200, 0xa0)\n    mstore(0x240, 0x00)\n    let kPublic := 0\n    mstore(0x260, kPublic)\n    let inputPtr := 0x280\n    mstore(add(inputPtr, 0x20), m)\n    let s := add(0x2c0, mul(m, 0x20))\n    for {\n        let i := 0\n    }\n    lt(i, m)\n    {\n        i := add(i, 0x01)\n    }\n    {\n        let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n        calldatacopy(0x00, add(noteIndex, 0x40), 0x80)\n        mstore(0xc0, keccak256(0x00, 0x80))\n        mstore(s, 0xa0)\n        mstore(add(s, 0x20), calldataload(add(inputOwners, mul(i, 0x20))))\n        mstore(add(s, 0x40), mload(0xc0))\n        mstore(add(s, 0x60), 0x40)\n        mstore(add(s, 0x80), or(calldataload(add(noteIndex, 0x40)), mul(and(calldataload(add(noteIndex, 0x60)), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(s, 0xa0), or(calldataload(add(noteIndex, 0x80)), mul(and(calldataload(add(noteIndex, 0xa0)), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(add(inputPtr, 0x40), mul(i, 0x20)), sub(s, inputPtr))\n        s := add(s, 0xc0)\n    }\n    mstore(0x280, sub(sub(s, inputPtr), 0x20))\n    mstore(0x220, add(0xa0, sub(s, inputPtr)))\n    inputPtr := s\n    mstore(add(inputPtr, 0x20), sub(n, m))\n    s := add(s, add(0x40, mul(sub(n, m), 0x20)))\n    for {\n        let i := m\n    }\n    lt(i, n)\n    {\n        i := add(i, 0x01)\n    }\n    {\n        let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n        let metadataIndex := calldataload(add(metadata, mul(sub(i, m), 0x20)))\n        let metadataLength := calldataload(add(sub(metadata, 0x40), metadataIndex))\n        calldatacopy(0x00, add(noteIndex, 0x40), 0x80)\n        mstore(s, add(0xa0, metadataLength))\n        mstore(add(s, 0x20), calldataload(add(outputOwners, mul(sub(i, m), 0x20))))\n        mstore(add(s, 0x40), keccak256(0x00, 0x80))\n        mstore(add(s, 0x60), add(0x40, metadataLength))\n        mstore(add(s, 0x80), or(mload(0x00), mul(and(mload(0x20), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(s, 0xa0), or(mload(0x40), mul(and(mload(0x60), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        calldatacopy(add(s, 0xc0), add(metadataIndex, sub(metadata, 0x20)), metadataLength)\n        mstore(add(add(inputPtr, 0x40), mul(sub(i, m), 0x20)), sub(s, inputPtr))\n        s := add(s, add(mload(s), 0x20))\n    }\n    mstore(inputPtr, sub(sub(s, inputPtr), 0x20))\n    let notesLength := sub(s, 0x280)\n    mstore(0x1e0, add(0x80, notesLength))\n    mstore(0x180, add(0xe0, notesLength))\n    mstore(0x160, 0x20)\n    return(0x160, add(0x120, notesLength))\n}",
+                  "src": "885:9291:5"
+                }
+              ]
+            },
+            "documentation": "New calldata map\n0x04:0x24      = calldata location of proofData byte array - pointer to the proofData. \n0x24:0x44      = message sender // sender\n0x44:0x64      = h_x     // crs\n0x64:0x84      = h_y     // crs\n0x84:0xa4      = t2_x0   // crs\n0xa4:0xc4      = t2_x1   // crs\n0xa4:0xc4      = t2_x1   // crs\n0xc4:0xe4      = t2_y0   // crs\n0xe4:0x104     = t2_y1   // crs\n0x104:0x124    = length of proofData byte array \n0x124:0x144    = challenge\n0x144:0x164    = offset in byte array to notes\n0x164:0x184    = offset in byte array to inputOwners\n0x184:0x1a4    = offset in byte array to outputOwners\n0x1a4:0x1c4    = offset in byte array to metadata*",
+            "id": 1179,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "encodeAndExit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1175,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "858:2:5"
+            },
+            "returnParameters": {
+              "id": 1176,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "875:0:5"
+            },
+            "scope": 1180,
+            "src": "836:9340:5",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 1201,
+        "src": "34:10144:5"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1200,
+        "linearizedBaseContracts": [
+          1200
+        ],
+        "name": "BilateralSwapABIEncoderTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1198,
+              "nodeType": "Block",
+              "src": "10399:56:5",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1193,
+                        "name": "BilateralSwapABIEncoder",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1180,
+                        "src": "10409:23:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_BilateralSwapABIEncoder_$1180_$",
+                          "typeString": "type(library BilateralSwapABIEncoder)"
+                        }
+                      },
+                      "id": 1195,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "encodeAndExit",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1179,
+                      "src": "10409:37:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$__$returns$__$",
+                        "typeString": "function () pure"
+                      }
+                    },
+                    "id": 1196,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "10409:39:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1197,
+                  "nodeType": "ExpressionStatement",
+                  "src": "10409:39:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1199,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "validateBilateralSwap",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1189,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1182,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1199,
+                  "src": "10264:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1181,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10264:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1184,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1199,
+                  "src": "10289:7:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1183,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10289:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1188,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1199,
+                  "src": "10307:16:5",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$6_calldata_ptr",
+                    "typeString": "uint256[6]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1185,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "10307:4:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 1187,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "36",
+                      "id": 1186,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "10312:1:5",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": null,
+                        "typeString": null
+                      },
+                      "value": "6"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "10307:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$6_storage_ptr",
+                      "typeString": "uint256[6]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10254:75:5"
+            },
+            "returnParameters": {
+              "id": 1192,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1191,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1199,
+                  "src": "10380:12:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1190,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10380:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10379:14:5"
+            },
+            "scope": 1200,
+            "src": "10224:231:5",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1201,
+        "src": "10181:276:5"
+      }
+    ],
+    "src": "0:10458:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.4+commit.9549d8ff.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.2",
+  "updatedAt": "2019-03-03T05:16:18.508Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

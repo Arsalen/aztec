@@ -1,0 +1,845 @@
+{
+  "contractName": "JoinSplitABIEncoder",
+  "abi": [],
+  "bytecode": "0x604c602c600b82828239805160001a60731460008114601c57601e565bfe5b5030600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea165627a7a72305820d9f854abe7f3fa48aa64d2d227e164022b607d42539d21c32c9d4db3c1ac40bd0029",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea165627a7a72305820d9f854abe7f3fa48aa64d2d227e164022b607d42539d21c32c9d4db3c1ac40bd0029",
+  "sourceMap": "72:11496:3:-;;132:2:-1;166:7;155:9;146:7;137:37;252:7;246:14;243:1;238:23;232:4;229:33;270:1;265:20;;;;222:63;;265:20;274:9;222:63;;298:9;295:1;288:20;328:4;319:7;311:22;352:7;343;336:24",
+  "deployedSourceMap": "72:11496:3:-;;;;;;;;",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\nimport \"../../../libs/LibEIP712.sol\";\n\nlibrary JoinSplitABIEncoder {\n    /**\n     * Calldata map\n     * 0x04:0x24      = calldata location of proofData byte array\n     * 0x24:0x44      = message sender\n     * 0x44:0x64      = h_x\n     * 0x64:0x84      = h_y\n     * 0x84:0xa4      = t2_x0\n     * 0xa4:0xc4      = t2_x1\n     * 0xc4:0xe4      = t2_y0\n     * 0xe4:0x104     = t2_y1\n     * 0x104:0x124    = length of proofData byte array\n     * 0x124:0x144    = m\n     * 0x144:0x164    = challenge\n     * 0x164:0x184    = publicOwner\n     * 0x184:0x1a4    = offset in byte array to notes\n     * 0x1a4:0x1c4    = offset in byte array to inputSignatures\n     * 0x1c4:0x2e4    = offset in byte array to outputOwners\n     * 0x1e4:0x204    = offset in byte array to metadata\n     */\n    function encodeAndExit(bytes32 domainHash) internal view {\n        assembly {\n            // set up initial variables\n            let notes := add(0x104, calldataload(0x184))\n            let n := calldataload(notes)\n            let m := calldataload(0x124)\n            let outputOwners := add(0x124, calldataload(0x1c4)) // one word after outputOwners = 1st\n            let signatures := add(0x124, calldataload(0x1a4)) // one word after signatures = 1st\n            let metadata := add(0x144, calldataload(0x1e4)) // two words after metadata = 1st\n\n            // memory map of `proofOutputs`\n\n            // 0x00 - 0x160  = scratch data for EIP712 signature computation and note hash computation\n            // ACE_NOTE_SIGNATURE struct hash variables\n            // 0x80 = struct hash\n            // 0xa0 = proofId (1)\n            // 0xc0 = noteHash\n            // 0xe0 = challenge\n            // 0x100 = sender\n            // struct hash of 'ACE_NOTE_SIGNATURE'\n            mstore(0x80, 0x6c1a087ea32e7586c4241d8ad29826c79af0e5ae5c44ca4be88caa5a18b99446)\n            mstore(0xa0, 0x01)\n            mstore(0xe0, calldataload(0x144)) // challenge\n            mstore(0x100, calldataload(0x24))\n\n            // EIP712 Signature variables\n            // 0x13e - 0x140 = 0x1901\n            // 0x140 - 0x160 = domainHash\n            // 0x160 - 0x180 = structHash\n            mstore(0x120, 0x1901)\n            mstore(0x140, domainHash) // domain hash\n\n            // `returndata` starts at 0x160\n            // `proofOutputs` starts at 0x180\n            // 0x160 - 0x180 = relative offset in returndata to first bytes argument (0x20)\n            // 0x180 - 0x1a0 = byte length of `proofOutputs`\n            // 0x1a0 - 0x1c0 = number of `proofOutputs` entries (1)\n            // 0x1c0 - 0x1e0 = relative memory offset between `v` and start of `proofOutput`\n\n            // `proofOutput` - t, starts at 0x1e0\n            // 0x1e0 - 0x200 = length of `proofOutput`\n            // 0x200 - 0x220 = relative offset between `t` and `inputNotes`\n            // 0x220 - 0x240 = relative offset between `t` and `outputNotes`\n            // 0x240 - 0x260 = `publicOwner`\n            // 0x260 - 0x280 = `publicValue`\n\n            // `inputNotes` starts at 0x280\n            // structure of `inputNotes` and `outputNotes`\n            // 0x00 - 0x20 = byte length of notes array\n            // 0x20 - 0x40 = number of notes `i`\n            // the next `i` consecutive blocks of 0x20-sized memory contain relative offset between\n            // start of notes array and the location of the `note`\n\n            // structure of a `note`\n            // 0x00 - 0x20 = size of `note`\n            // 0x20 - 0x40 = `owner`\n            // 0x40 - 0x60 = `noteHash`\n            // 0x60 - 0x80 = size of note `data`\n            // 0x80 - 0xa0 = compressed note coordinate `gamma` (part of `data`)\n            // 0xa0 - 0xc0 = compressed note coordinate `sigma` (part of `data`)\n            // 0xc0 - ???? = remaining note metadata\n\n            // `proofOutputs` must form a monolithic block of memory that we can return.\n            // `s` points to the memory location of the start of the current note\n            // `inputPtr` points to the start of the current `notes` dynamic bytes array\n\n            // length of proofOutputs is at s\n            mstore(0x1a0, 0x01)                            // number of proofs\n            mstore(0x1c0, 0x60)                            // offset to 1st proof\n            // length of proofOutput is at s + 0x60\n            mstore(0x200, 0xa0)                            // location of inputNotes\n            // location of outputNotes is at s + 0xa0\n            mstore(0x240, calldataload(0x164))             // publicOwner\n            // store kPublic. If kPublic is negative, store correct signed representation,\n            // relative to 2^256, not to the order of the bn128 group\n            let kPublic := calldataload(sub(add(notes, mul(calldataload(notes), 0xc0)), 0xa0))\n            switch gt(kPublic, 10944121435919637611123202872628637544274182200208017171849102093287904247808)\n            case 1 {\n                mstore(0x260, sub(kPublic, 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001))\n            }\n            case 0 {\n                mstore(0x260, kPublic)\n            }\n\n            let inputPtr := 0x280                                 // point to inputNotes\n            mstore(add(inputPtr, 0x20), m)                        // number of input notes\n            // set note pointer, offsetting lookup indices for each input note\n            let s := add(0x2c0, mul(m, 0x20))\n\n            for { let i := 0 } lt(i, m) { i := add(i, 0x01) } {\n                let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n                // get pointer to input signatures\n                let signatureIndex := add(signatures, mul(i, 0x60))\n                // copy note data to 0x00 - 0x80\n                calldatacopy(0x00, add(noteIndex, 0x40), 0x80) // get gamma, sigma\n\n                // construct EIP712 signature parameters\n                mstore(0xc0, keccak256(0x00, 0x80)) // note hash\n                // construct EIP712 signature message\n                mstore(0x160, keccak256(0x80, 0xa0))\n                mstore(0x00, keccak256(0x13e, 0x42))\n                // recover address of EIP712 signature\n                mstore(0x20, and(calldataload(signatureIndex), 0xff)) // get 8-bit v\n                calldatacopy(0x40, add(signatureIndex, 0x20), 0x40) // copy r, s into memory\n\n                // store note length in `s`\n                mstore(s, 0xa0)\n                // store note owner in `s + 0x20`. If ECDSA recovery fails, or signing address is `0`, throw an error\n                if or(\n                iszero(mload(add(s, 0x20))),\n                iszero(staticcall(gas, 0x01, 0x00, 0x80, add(s, 0x20), 0x20))\n                ) {\n                mstore(0x00, 400) revert(0x00, 0x20)\n                }\n                // store note hash in `s + 0x40`\n                mstore(add(s, 0x40), mload(0xc0))\n                // store note metadata length in `s + 0x60` (just the coordinates)\n                mstore(add(s, 0x60), 0x40)\n                // store compressed note coordinate gamma in `s + 0x80`\n                mstore(\n                add(s, 0x80),\n                or(\n                    calldataload(add(noteIndex, 0x40)),\n                    mul(\n                    and(calldataload(add(noteIndex, 0x60)), 0x01),\n                    0x8000000000000000000000000000000000000000000000000000000000000000\n                    )\n                )\n                )\n                // store compressed note coordinate sigma in `s + 0xa0`\n                mstore(\n                add(s, 0xa0),\n                or(\n                    calldataload(add(noteIndex, 0x80)),\n                    mul(\n                    and(calldataload(add(noteIndex, 0xa0)), 0x01),\n                    0x8000000000000000000000000000000000000000000000000000000000000000\n                    )\n                )\n                )\n                // compute the relative offset to index this note in our returndata\n                mstore(add(add(inputPtr, 0x40), mul(i, 0x20)), sub(s, inputPtr)) // relative offset to note\n        \n                // increase s by note length\n                s := add(s, 0xc0)\n            }\n\n            // transition between input and output notes\n            mstore(0x280, sub(sub(s, inputPtr), 0x20)) // store total length of inputNotes at first index of inputNotes \n            mstore(0x220, add(0xa0, sub(s, inputPtr))) // store relative memory offset to outputNotes\n            inputPtr := s\n            mstore(add(inputPtr, 0x20), sub(n, m)) // store number of output notes\n            s := add(s, add(0x40, mul(sub(n, m), 0x20)))\n\n            // output notes\n            for { let i := m } lt(i, n) { i := add(i, 0x01) } {\n                // get note index\n                let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n                // get pointer to metadata\n                let metadataIndex := calldataload(add(metadata, mul(sub(i, m), 0x20)))\n                // get size of metadata\n                let metadataLength := calldataload(add(sub(metadata, 0x40), metadataIndex))\n\n                // copy note data to 0x00 - 0x80\n                calldatacopy(0x00, add(noteIndex, 0x40), 0x80) // get gamma, sigma\n\n                // store note length in `s`\n                mstore(s, add(0xa0, metadataLength))\n                // store the owner of the note in `s + 0x20`\n                mstore(add(s, 0x20), calldataload(add(outputOwners, mul(sub(i, m), 0x20))))\n                // store note hash\n                mstore(add(s, 0x40), keccak256(0x00, 0x80))\n                // store note metadata length if `s + 0x60`\n                mstore(add(s, 0x60), add(0x40, metadataLength))\n                // store compressed note coordinate gamma in `s + 0x80`\n                mstore(\n                    add(s, 0x80),\n                    or(\n                        mload(0x00),\n                        mul(\n                            and(mload(0x20), 0x01),\n                            0x8000000000000000000000000000000000000000000000000000000000000000\n                        )\n                    )\n                )\n                // store compressed note coordinate sigma in `s + 0xa0`\n                mstore(\n                add(s, 0xa0),\n                or(\n                    mload(0x40),\n                    mul(\n                        and(mload(0x60), 0x01),\n                        0x8000000000000000000000000000000000000000000000000000000000000000\n                    )\n                )\n                )\n                // copy metadata into `s + 0xc0`\n                calldatacopy(add(s, 0xc0), add(metadataIndex, sub(metadata, 0x20)), metadataLength)\n                // compute the relative offset to index this note in our returndata\n                mstore(add(add(inputPtr, 0x40), mul(sub(i, m), 0x20)), sub(s, inputPtr)) // relative offset to note\n\n                // increase s by note length\n                s := add(s, add(mload(s), 0x20))\n            }\n\n            // cleanup. the length of the outputNotes = s - inputPtr\n            mstore(inputPtr, sub(sub(s, inputPtr), 0x20)) // store length of outputNotes at start of outputNotes\n            let notesLength := sub(s, 0x280)\n            mstore(0x1e0, add(0x80, notesLength)) // store length of proofOutput at 0x160\n            mstore(0x180, add(0xe0, notesLength)) // store length of proofOutputs at 0x100\n            // mstore(0x00 , notesLength) return(0x00, 0x20)\n            mstore(0x160, 0x20)\n            return(0x160, add(0x120, notesLength)) // return the final byte array\n        }\n    }\n}\n\n\ncontract JoinSplitABIEncoderTest is LibEIP712 {\n\n    function validateJoinSplit(\n        bytes calldata, \n        address, \n        uint[6] calldata\n    ) \n        external \n        view \n        returns (bytes memory) \n    {\n        JoinSplitABIEncoder.encodeAndExit(EIP712_DOMAIN_HASH);\n    }\n}\n",
+  "sourcePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/ACE/validators/JoinSplit/JoinSplitABIEncoder.sol",
+  "ast": {
+    "absolutePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/ACE/validators/JoinSplit/JoinSplitABIEncoder.sol",
+    "exportedSymbols": {
+      "JoinSplitABIEncoder": [
+        1120
+      ],
+      "JoinSplitABIEncoderTest": [
+        1143
+      ]
+    },
+    "id": 1144,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1111,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:3"
+      },
+      {
+        "absolutePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/libs/LibEIP712.sol",
+        "file": "../../../libs/LibEIP712.sol",
+        "id": 1112,
+        "nodeType": "ImportDirective",
+        "scope": 1144,
+        "sourceUnit": 1939,
+        "src": "33:37:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1120,
+        "linearizedBaseContracts": [
+          1120
+        ],
+        "name": "JoinSplitABIEncoder",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1118,
+              "nodeType": "Block",
+              "src": "867:10699:3",
+              "statements": [
+                {
+                  "externalReferences": [
+                    {
+                      "domainHash": {
+                        "declaration": 1114,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "2230:10:3",
+                        "valueSize": 1
+                      }
+                    }
+                  ],
+                  "id": 1117,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{\n    let notes := add(0x104, calldataload(0x184))\n    let n := calldataload(notes)\n    let m := calldataload(0x124)\n    let outputOwners := add(0x124, calldataload(0x1c4))\n    let signatures := add(0x124, calldataload(0x1a4))\n    let metadata := add(0x144, calldataload(0x1e4))\n    mstore(0x80, 0x6c1a087ea32e7586c4241d8ad29826c79af0e5ae5c44ca4be88caa5a18b99446)\n    mstore(0xa0, 0x01)\n    mstore(0xe0, calldataload(0x144))\n    mstore(0x100, calldataload(0x24))\n    mstore(0x120, 0x1901)\n    mstore(0x140, domainHash)\n    mstore(0x1a0, 0x01)\n    mstore(0x1c0, 0x60)\n    mstore(0x200, 0xa0)\n    mstore(0x240, calldataload(0x164))\n    let kPublic := calldataload(sub(add(notes, mul(calldataload(notes), 0xc0)), 0xa0))\n    switch gt(kPublic, 10944121435919637611123202872628637544274182200208017171849102093287904247808)\n    case 1 {\n        mstore(0x260, sub(kPublic, 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001))\n    }\n    case 0 {\n        mstore(0x260, kPublic)\n    }\n    let inputPtr := 0x280\n    mstore(add(inputPtr, 0x20), m)\n    let s := add(0x2c0, mul(m, 0x20))\n    for {\n        let i := 0\n    }\n    lt(i, m)\n    {\n        i := add(i, 0x01)\n    }\n    {\n        let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n        let signatureIndex := add(signatures, mul(i, 0x60))\n        calldatacopy(0x00, add(noteIndex, 0x40), 0x80)\n        mstore(0xc0, keccak256(0x00, 0x80))\n        mstore(0x160, keccak256(0x80, 0xa0))\n        mstore(0x00, keccak256(0x13e, 0x42))\n        mstore(0x20, and(calldataload(signatureIndex), 0xff))\n        calldatacopy(0x40, add(signatureIndex, 0x20), 0x40)\n        mstore(s, 0xa0)\n        if or(iszero(mload(add(s, 0x20))), iszero(staticcall(gas(), 0x01, 0x00, 0x80, add(s, 0x20), 0x20)))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n        mstore(add(s, 0x40), mload(0xc0))\n        mstore(add(s, 0x60), 0x40)\n        mstore(add(s, 0x80), or(calldataload(add(noteIndex, 0x40)), mul(and(calldataload(add(noteIndex, 0x60)), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(s, 0xa0), or(calldataload(add(noteIndex, 0x80)), mul(and(calldataload(add(noteIndex, 0xa0)), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(add(inputPtr, 0x40), mul(i, 0x20)), sub(s, inputPtr))\n        s := add(s, 0xc0)\n    }\n    mstore(0x280, sub(sub(s, inputPtr), 0x20))\n    mstore(0x220, add(0xa0, sub(s, inputPtr)))\n    inputPtr := s\n    mstore(add(inputPtr, 0x20), sub(n, m))\n    s := add(s, add(0x40, mul(sub(n, m), 0x20)))\n    for {\n        let i := m\n    }\n    lt(i, n)\n    {\n        i := add(i, 0x01)\n    }\n    {\n        let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n        let metadataIndex := calldataload(add(metadata, mul(sub(i, m), 0x20)))\n        let metadataLength := calldataload(add(sub(metadata, 0x40), metadataIndex))\n        calldatacopy(0x00, add(noteIndex, 0x40), 0x80)\n        mstore(s, add(0xa0, metadataLength))\n        mstore(add(s, 0x20), calldataload(add(outputOwners, mul(sub(i, m), 0x20))))\n        mstore(add(s, 0x40), keccak256(0x00, 0x80))\n        mstore(add(s, 0x60), add(0x40, metadataLength))\n        mstore(add(s, 0x80), or(mload(0x00), mul(and(mload(0x20), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(s, 0xa0), or(mload(0x40), mul(and(mload(0x60), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        calldatacopy(add(s, 0xc0), add(metadataIndex, sub(metadata, 0x20)), metadataLength)\n        mstore(add(add(inputPtr, 0x40), mul(sub(i, m), 0x20)), sub(s, inputPtr))\n        s := add(s, add(mload(s), 0x20))\n    }\n    mstore(inputPtr, sub(sub(s, inputPtr), 0x20))\n    let notesLength := sub(s, 0x280)\n    mstore(0x1e0, add(0x80, notesLength))\n    mstore(0x180, add(0xe0, notesLength))\n    mstore(0x160, 0x20)\n    return(0x160, add(0x120, notesLength))\n}",
+                  "src": "877:10689:3"
+                }
+              ]
+            },
+            "documentation": "Calldata map\n0x04:0x24      = calldata location of proofData byte array\n0x24:0x44      = message sender\n0x44:0x64      = h_x\n0x64:0x84      = h_y\n0x84:0xa4      = t2_x0\n0xa4:0xc4      = t2_x1\n0xc4:0xe4      = t2_y0\n0xe4:0x104     = t2_y1\n0x104:0x124    = length of proofData byte array\n0x124:0x144    = m\n0x144:0x164    = challenge\n0x164:0x184    = publicOwner\n0x184:0x1a4    = offset in byte array to notes\n0x1a4:0x1c4    = offset in byte array to inputSignatures\n0x1c4:0x2e4    = offset in byte array to outputOwners\n0x1e4:0x204    = offset in byte array to metadata",
+            "id": 1119,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "encodeAndExit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1115,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1114,
+                  "name": "domainHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1119,
+                  "src": "833:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1113,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "833:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "832:20:3"
+            },
+            "returnParameters": {
+              "id": 1116,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "867:0:3"
+            },
+            "scope": 1120,
+            "src": "810:10756:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 1144,
+        "src": "72:11496:3"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1121,
+              "name": "LibEIP712",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1938,
+              "src": "11607:9:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LibEIP712_$1938",
+                "typeString": "contract LibEIP712"
+              }
+            },
+            "id": 1122,
+            "nodeType": "InheritanceSpecifier",
+            "src": "11607:9:3"
+          }
+        ],
+        "contractDependencies": [
+          1938
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1143,
+        "linearizedBaseContracts": [
+          1143,
+          1938
+        ],
+        "name": "JoinSplitABIEncoderTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1141,
+              "nodeType": "Block",
+              "src": "11795:70:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1138,
+                        "name": "EIP712_DOMAIN_HASH",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1864,
+                        "src": "11839:18:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1135,
+                        "name": "JoinSplitABIEncoder",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1120,
+                        "src": "11805:19:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_JoinSplitABIEncoder_$1120_$",
+                          "typeString": "type(library JoinSplitABIEncoder)"
+                        }
+                      },
+                      "id": 1137,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "encodeAndExit",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1119,
+                      "src": "11805:33:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) view"
+                      }
+                    },
+                    "id": 1139,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "11805:53:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1140,
+                  "nodeType": "ExpressionStatement",
+                  "src": "11805:53:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1142,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "validateJoinSplit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1131,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1124,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1142,
+                  "src": "11660:14:3",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1123,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11660:5:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1126,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1142,
+                  "src": "11685:7:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1125,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11685:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1130,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1142,
+                  "src": "11703:16:3",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$6_calldata_ptr",
+                    "typeString": "uint256[6]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1127,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "11703:4:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 1129,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "36",
+                      "id": 1128,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "11708:1:3",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": null,
+                        "typeString": null
+                      },
+                      "value": "6"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "11703:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$6_storage_ptr",
+                      "typeString": "uint256[6]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11650:75:3"
+            },
+            "returnParameters": {
+              "id": 1134,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1133,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1142,
+                  "src": "11776:12:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1132,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11776:5:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11775:14:3"
+            },
+            "scope": 1143,
+            "src": "11624:241:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1144,
+        "src": "11571:296:3"
+      }
+    ],
+    "src": "0:11868:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/ACE/validators/JoinSplit/JoinSplitABIEncoder.sol",
+    "exportedSymbols": {
+      "JoinSplitABIEncoder": [
+        1120
+      ],
+      "JoinSplitABIEncoderTest": [
+        1143
+      ]
+    },
+    "id": 1144,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1111,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:3"
+      },
+      {
+        "absolutePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/libs/LibEIP712.sol",
+        "file": "../../../libs/LibEIP712.sol",
+        "id": 1112,
+        "nodeType": "ImportDirective",
+        "scope": 1144,
+        "sourceUnit": 1939,
+        "src": "33:37:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1120,
+        "linearizedBaseContracts": [
+          1120
+        ],
+        "name": "JoinSplitABIEncoder",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1118,
+              "nodeType": "Block",
+              "src": "867:10699:3",
+              "statements": [
+                {
+                  "externalReferences": [
+                    {
+                      "domainHash": {
+                        "declaration": 1114,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "2230:10:3",
+                        "valueSize": 1
+                      }
+                    }
+                  ],
+                  "id": 1117,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{\n    let notes := add(0x104, calldataload(0x184))\n    let n := calldataload(notes)\n    let m := calldataload(0x124)\n    let outputOwners := add(0x124, calldataload(0x1c4))\n    let signatures := add(0x124, calldataload(0x1a4))\n    let metadata := add(0x144, calldataload(0x1e4))\n    mstore(0x80, 0x6c1a087ea32e7586c4241d8ad29826c79af0e5ae5c44ca4be88caa5a18b99446)\n    mstore(0xa0, 0x01)\n    mstore(0xe0, calldataload(0x144))\n    mstore(0x100, calldataload(0x24))\n    mstore(0x120, 0x1901)\n    mstore(0x140, domainHash)\n    mstore(0x1a0, 0x01)\n    mstore(0x1c0, 0x60)\n    mstore(0x200, 0xa0)\n    mstore(0x240, calldataload(0x164))\n    let kPublic := calldataload(sub(add(notes, mul(calldataload(notes), 0xc0)), 0xa0))\n    switch gt(kPublic, 10944121435919637611123202872628637544274182200208017171849102093287904247808)\n    case 1 {\n        mstore(0x260, sub(kPublic, 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001))\n    }\n    case 0 {\n        mstore(0x260, kPublic)\n    }\n    let inputPtr := 0x280\n    mstore(add(inputPtr, 0x20), m)\n    let s := add(0x2c0, mul(m, 0x20))\n    for {\n        let i := 0\n    }\n    lt(i, m)\n    {\n        i := add(i, 0x01)\n    }\n    {\n        let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n        let signatureIndex := add(signatures, mul(i, 0x60))\n        calldatacopy(0x00, add(noteIndex, 0x40), 0x80)\n        mstore(0xc0, keccak256(0x00, 0x80))\n        mstore(0x160, keccak256(0x80, 0xa0))\n        mstore(0x00, keccak256(0x13e, 0x42))\n        mstore(0x20, and(calldataload(signatureIndex), 0xff))\n        calldatacopy(0x40, add(signatureIndex, 0x20), 0x40)\n        mstore(s, 0xa0)\n        if or(iszero(mload(add(s, 0x20))), iszero(staticcall(gas(), 0x01, 0x00, 0x80, add(s, 0x20), 0x20)))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n        mstore(add(s, 0x40), mload(0xc0))\n        mstore(add(s, 0x60), 0x40)\n        mstore(add(s, 0x80), or(calldataload(add(noteIndex, 0x40)), mul(and(calldataload(add(noteIndex, 0x60)), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(s, 0xa0), or(calldataload(add(noteIndex, 0x80)), mul(and(calldataload(add(noteIndex, 0xa0)), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(add(inputPtr, 0x40), mul(i, 0x20)), sub(s, inputPtr))\n        s := add(s, 0xc0)\n    }\n    mstore(0x280, sub(sub(s, inputPtr), 0x20))\n    mstore(0x220, add(0xa0, sub(s, inputPtr)))\n    inputPtr := s\n    mstore(add(inputPtr, 0x20), sub(n, m))\n    s := add(s, add(0x40, mul(sub(n, m), 0x20)))\n    for {\n        let i := m\n    }\n    lt(i, n)\n    {\n        i := add(i, 0x01)\n    }\n    {\n        let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n        let metadataIndex := calldataload(add(metadata, mul(sub(i, m), 0x20)))\n        let metadataLength := calldataload(add(sub(metadata, 0x40), metadataIndex))\n        calldatacopy(0x00, add(noteIndex, 0x40), 0x80)\n        mstore(s, add(0xa0, metadataLength))\n        mstore(add(s, 0x20), calldataload(add(outputOwners, mul(sub(i, m), 0x20))))\n        mstore(add(s, 0x40), keccak256(0x00, 0x80))\n        mstore(add(s, 0x60), add(0x40, metadataLength))\n        mstore(add(s, 0x80), or(mload(0x00), mul(and(mload(0x20), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(s, 0xa0), or(mload(0x40), mul(and(mload(0x60), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        calldatacopy(add(s, 0xc0), add(metadataIndex, sub(metadata, 0x20)), metadataLength)\n        mstore(add(add(inputPtr, 0x40), mul(sub(i, m), 0x20)), sub(s, inputPtr))\n        s := add(s, add(mload(s), 0x20))\n    }\n    mstore(inputPtr, sub(sub(s, inputPtr), 0x20))\n    let notesLength := sub(s, 0x280)\n    mstore(0x1e0, add(0x80, notesLength))\n    mstore(0x180, add(0xe0, notesLength))\n    mstore(0x160, 0x20)\n    return(0x160, add(0x120, notesLength))\n}",
+                  "src": "877:10689:3"
+                }
+              ]
+            },
+            "documentation": "Calldata map\n0x04:0x24      = calldata location of proofData byte array\n0x24:0x44      = message sender\n0x44:0x64      = h_x\n0x64:0x84      = h_y\n0x84:0xa4      = t2_x0\n0xa4:0xc4      = t2_x1\n0xc4:0xe4      = t2_y0\n0xe4:0x104     = t2_y1\n0x104:0x124    = length of proofData byte array\n0x124:0x144    = m\n0x144:0x164    = challenge\n0x164:0x184    = publicOwner\n0x184:0x1a4    = offset in byte array to notes\n0x1a4:0x1c4    = offset in byte array to inputSignatures\n0x1c4:0x2e4    = offset in byte array to outputOwners\n0x1e4:0x204    = offset in byte array to metadata",
+            "id": 1119,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "encodeAndExit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1115,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1114,
+                  "name": "domainHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1119,
+                  "src": "833:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1113,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "833:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "832:20:3"
+            },
+            "returnParameters": {
+              "id": 1116,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "867:0:3"
+            },
+            "scope": 1120,
+            "src": "810:10756:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 1144,
+        "src": "72:11496:3"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1121,
+              "name": "LibEIP712",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1938,
+              "src": "11607:9:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LibEIP712_$1938",
+                "typeString": "contract LibEIP712"
+              }
+            },
+            "id": 1122,
+            "nodeType": "InheritanceSpecifier",
+            "src": "11607:9:3"
+          }
+        ],
+        "contractDependencies": [
+          1938
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1143,
+        "linearizedBaseContracts": [
+          1143,
+          1938
+        ],
+        "name": "JoinSplitABIEncoderTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1141,
+              "nodeType": "Block",
+              "src": "11795:70:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1138,
+                        "name": "EIP712_DOMAIN_HASH",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1864,
+                        "src": "11839:18:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1135,
+                        "name": "JoinSplitABIEncoder",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1120,
+                        "src": "11805:19:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_JoinSplitABIEncoder_$1120_$",
+                          "typeString": "type(library JoinSplitABIEncoder)"
+                        }
+                      },
+                      "id": 1137,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "encodeAndExit",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1119,
+                      "src": "11805:33:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) view"
+                      }
+                    },
+                    "id": 1139,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "11805:53:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1140,
+                  "nodeType": "ExpressionStatement",
+                  "src": "11805:53:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1142,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "validateJoinSplit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1131,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1124,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1142,
+                  "src": "11660:14:3",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1123,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11660:5:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1126,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1142,
+                  "src": "11685:7:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1125,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11685:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1130,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1142,
+                  "src": "11703:16:3",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$6_calldata_ptr",
+                    "typeString": "uint256[6]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1127,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "11703:4:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 1129,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "36",
+                      "id": 1128,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "11708:1:3",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": null,
+                        "typeString": null
+                      },
+                      "value": "6"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "11703:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$6_storage_ptr",
+                      "typeString": "uint256[6]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11650:75:3"
+            },
+            "returnParameters": {
+              "id": 1134,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1133,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1142,
+                  "src": "11776:12:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1132,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11776:5:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11775:14:3"
+            },
+            "scope": 1143,
+            "src": "11624:241:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1144,
+        "src": "11571:296:3"
+      }
+    ],
+    "src": "0:11868:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.4+commit.9549d8ff.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.2",
+  "updatedAt": "2019-03-03T05:16:18.506Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

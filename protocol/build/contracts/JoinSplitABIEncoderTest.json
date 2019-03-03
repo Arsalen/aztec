@@ -1,0 +1,887 @@
+{
+  "contractName": "JoinSplitABIEncoderTest",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "EIP712_DOMAIN_HASH",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes"
+        },
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "uint256[6]"
+        }
+      ],
+      "name": "validateJoinSplit",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x7f454950373132446f6d61696e280000000000000000000000000000000000000060a09081527f737472696e67206e616d652c000000000000000000000000000000000000000060ad527f737472696e672076657273696f6e2c000000000000000000000000000000000060b9527f6164647265737320766572696679696e67436f6e74726163740000000000000060c8527f290000000000000000000000000000000000000000000000000000000000000060e152604260808181529120601960e2527f415a5445435f43525950544f4752415048595f454e47494e4500000000000000610102526001610122527f3100000000000000000000000000000000000000000000000000000000000000610142526101829081527fc8066e2c715ce196630b273cd256d8959d5b9fefc55e9e6d999fb0f08bb7f75f6101a2527fc89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc66101c252306101e2526101628290526102026040522060005561049d806101876000396000f3fe608060405234801561001057600080fd5b5060043610610052577c010000000000000000000000000000000000000000000000000000000060003504637a26becd8114610057578063e306f77914610158575b600080fd5b6100e3600480360361010081101561006e57600080fd5b81019060208101813564010000000081111561008957600080fd5b82018360208201111561009b57600080fd5b803590602001918460018302840111640100000000831117156100bd57600080fd5b919350915073ffffffffffffffffffffffffffffffffffffffff81351690602001610172565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561011d578181015183820152602001610105565b50505050905090810190601f16801561014a5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b610160610187565b60408051918252519081900360200190f35b606061017f60005461018d565b949350505050565b60005481565b61018435610104018035610124356101c435610124016101a435610124016101e435610144017f6c1a087ea32e7586c4241d8ad29826c79af0e5ae5c44ca4be88caa5a18b99446608052600160a0526101443560e0526024356101005261190161012052866101405260016101a05260606101c05260a061020052610164356102405260a060c0873502870103357f183227397098d014dc2822db40c0ac2e9419f4243cdcb848a1f0fac9f800000081116001811461025157801561027d57610283565b7f30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001820361026052610283565b81610260525b506102a08590526102806102c0602087020160005b8781101561036e5760c0810260208b0101606082028701608060408301600037608060002060c05260a060802061016052604261013e2060005260ff81351660205260406020820160403760a0845260208085016080600060015afa15602085015115171561030d5761019060005260206000fd5b60c05160408501526040606085015260ff60020a600160608401351602604083013517608085015260ff60020a600160a0840135160260808301351760a08501528484036020840260408701015260c0840193505050600181019050610298565b50908103601f1981016102805260a00161022052858703602080830182905260409102820101865b888110156104435760c0810260208b0101602089830302860135806040880301356080604084016000378060a001855260208b8503028a013560208601526080600020604086015280604001606086015260ff60020a6001602051160260005117608086015260ff60020a600160605116026040511760a08601528060208903830160c087013785850360208c860302604088010152602085510185019450505050600181019050610396565b5060208282030382526102808103806080016101e0528060e001610180526020610160528061012001610160f3fea165627a7a723058208cbc25db45fba89d16a81d079ea7f62b61d45c78a5199fd18158cf0e7dbad48c0029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b5060043610610052577c010000000000000000000000000000000000000000000000000000000060003504637a26becd8114610057578063e306f77914610158575b600080fd5b6100e3600480360361010081101561006e57600080fd5b81019060208101813564010000000081111561008957600080fd5b82018360208201111561009b57600080fd5b803590602001918460018302840111640100000000831117156100bd57600080fd5b919350915073ffffffffffffffffffffffffffffffffffffffff81351690602001610172565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561011d578181015183820152602001610105565b50505050905090810190601f16801561014a5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b610160610187565b60408051918252519081900360200190f35b606061017f60005461018d565b949350505050565b60005481565b61018435610104018035610124356101c435610124016101a435610124016101e435610144017f6c1a087ea32e7586c4241d8ad29826c79af0e5ae5c44ca4be88caa5a18b99446608052600160a0526101443560e0526024356101005261190161012052866101405260016101a05260606101c05260a061020052610164356102405260a060c0873502870103357f183227397098d014dc2822db40c0ac2e9419f4243cdcb848a1f0fac9f800000081116001811461025157801561027d57610283565b7f30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001820361026052610283565b81610260525b506102a08590526102806102c0602087020160005b8781101561036e5760c0810260208b0101606082028701608060408301600037608060002060c05260a060802061016052604261013e2060005260ff81351660205260406020820160403760a0845260208085016080600060015afa15602085015115171561030d5761019060005260206000fd5b60c05160408501526040606085015260ff60020a600160608401351602604083013517608085015260ff60020a600160a0840135160260808301351760a08501528484036020840260408701015260c0840193505050600181019050610298565b50908103601f1981016102805260a00161022052858703602080830182905260409102820101865b888110156104435760c0810260208b0101602089830302860135806040880301356080604084016000378060a001855260208b8503028a013560208601526080600020604086015280604001606086015260ff60020a6001602051160260005117608086015260ff60020a600160605116026040511760a08601528060208903830160c087013785850360208c860302604088010152602085510185019450505050600181019050610396565b5060208282030382526102808103806080016101e0528060e001610180526020610160528061012001610160f3fea165627a7a723058208cbc25db45fba89d16a81d079ea7f62b61d45c78a5199fd18158cf0e7dbad48c0029",
+  "sourceMap": "1133:160:11:-;;;;;;;;;;;;;;;;;22:32:-1;11571:296:3;6:49:-1;;;1123:171:11;;1133:160;;1611:18;;;;1133:160;1611:18;1661:21;;;;1516:223;;;;1595:36;1516:223;;1645:39;1516:223;;1722:4;1516:223;;1661:21;6:49:-1;;;1516:223:11;11571:296:3;1516:223:11;1506:234;-1:-1:-1;1485:255:11;11571:296:3;;;;;;",
+  "deployedSourceMap": "11571:296:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;11571:296:3;;;;;;;;;;;;;;;;;;;;;;;;11624:241;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;11624:241:3;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;11624:241:3;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;11624:241:3;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;11624:241:3;;-1:-1:-1;11624:241:3;-1:-1:-1;11624:241:3;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;11624:241:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1401:33:11;;;:::i;:::-;;;;;;;;;;;;;;;;11624:241:3;11776:12;11805:53;11839:18;;11805:33;:53::i;:::-;11624:241;;;;;;:::o;1401:33:11:-;;;;:::o;810:10756:3:-;977:5;964:19;957:5;953:31;1019:5;1006:19;1060:5;1047:19;1123:5;1110:19;1103:5;1099:31;1222:5;1209:19;1202:5;1198:31;1317:5;1304:19;1297:5;1293:31;1801:66;1795:4;1788:80;1894:4;1888;1881:18;1938:5;1925:19;1919:4;1912:33;1998:4;1985:18;1978:5;1971:33;2196:6;2189:5;2182:21;2230:10;2223:5;2216:25;4144:4;4137:5;4130:19;4223:4;4216:5;4209:19;4357:4;4350:5;4343:19;4509:5;4496:19;4489:5;4482:34;4793:4;4785;4777:5;4764:19;4760:30;4753:5;4749:42;4745:53;4732:67;4831:77;4822:7;4819:90;4927:1;4922:134;;;;5069:61;;;;4812:318;;4922:134;4974:66;4965:7;4961:80;4954:5;4947:95;4922:134;;5069:61;5108:7;5101:5;5094:22;4812:318;-1:-1:-1;5240:19:3;5233:30;;;5160:5;5416;5254:4;5423:12;;5412:24;5465:1;5450:2716;5475:1;5472;5469:8;5450:2716;;;5564:4;5561:1;5557:12;5550:4;5543:5;5539:16;5535:35;5683:4;5680:1;5676:12;5664:10;5660:29;5796:4;5789;5778:9;5774:20;5768:4;5755:46;5925:4;5919;5909:21;5903:4;5896:35;6045:4;6039;6029:21;6022:5;6015:36;6098:4;6091:5;6081:22;6075:4;6068:36;6223:4;6206:14;6193:28;6189:39;6183:4;6176:53;6307:4;6300;6284:14;6280:25;6274:4;6261:51;6409:4;6406:1;6399:15;6672:4;6665;6662:1;6658:12;6652:4;6646;6640;6635:3;6624:53;6617:61;6592:4;6589:1;6585:12;6579:19;6572:27;6552:144;6549:2;;;6728:3;6722:4;6715:17;6746:4;6740;6733:18;6549:2;6862:4;6856:11;6849:4;6846:1;6842:12;6835:33;6989:4;6982;6979:1;6975:12;6968:26;-1:-1:-1;;;7282:4:3;7274;7263:9;7259:20;7246:34;7242:45;7217:180;7189:4;7178:9;7174:20;7161:34;7137:278;7114:4;7111:1;7107:12;7083:350;-1:-1:-1;;;7721:4:3;7713;7702:9;7698:20;7685:34;7681:45;7656:180;7628:4;7617:9;7613:20;7600:34;7576:278;7553:4;7550:1;7546:12;7522:350;8027:8;8024:1;8020:16;8012:4;8009:1;8005:12;7998:4;7988:8;7984:19;7980:38;7973:64;8147:4;8144:1;8140:12;8135:17;;5500:2666;;5492:4;5489:1;5485:12;5480:17;;5450:2716;;;-1:-1:-1;8255:16:3;;;-1:-1:-1;;8251:27:3;;8244:5;8237:42;8376:4;8372:27;8365:5;8358:42;8514:9;;;8273:4;8493:19;;;8486:38;;;8585:4;8591:20;;8574:39;;;8514:9;8655:2311;8680:1;8677;8674:8;8655:2311;;;8803:4;8800:1;8796:12;8789:4;8782:5;8778:16;8774:35;8932:4;8928:1;8925;8921:9;8917:20;8907:8;8903:35;8890:49;9056:13;9049:4;9039:8;9035:19;9031:39;9018:53;9179:4;9172;9161:9;9157:20;9151:4;9138:46;9286:14;9280:4;9276:25;9273:1;9266:36;9447:4;9443:1;9440;9436:9;9432:20;9418:12;9414:39;9401:53;9394:4;9391:1;9387:12;9380:75;9544:4;9538;9528:21;9521:4;9518:1;9514:12;9507:43;9658:14;9652:4;9648:25;9641:4;9638:1;9634:12;9627:47;-1:-1:-1;;;9940:4:3;9933;9927:11;9923:22;9890:177;9859:4;9853:11;9825:264;9798:4;9795:1;9791:12;9763:344;-1:-1:-1;;;10353:4:3;10346;10340:11;10336:22;10307:165;10280:4;10274:11;10250:240;10227:4;10224:1;10220:12;10196:312;10642:14;10634:4;10624:8;10620:19;10605:13;10601:39;10594:4;10591:1;10587:12;10574:83;10820:8;10817:1;10813:16;10805:4;10801:1;10798;10794:9;10790:20;10783:4;10773:8;10769:19;10765:46;10758:72;10946:4;10942:1;10936:8;10932:19;10929:1;10925:27;10920:32;;8705:2261;;;8697:4;8694:1;8690:12;8685:17;;8655:2311;;;8659:14;11088:4;11077:8;11074:1;11070:16;11066:27;11056:8;11049:45;11188:5;11185:1;11181:13;11231:11;11225:4;11221:22;11214:5;11207:37;11321:11;11315:4;11311:22;11304:5;11297:37;11463:4;11456:5;11449:19;11506:11;11499:5;11495:23;11488:5;11481:38",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\nimport \"../../../libs/LibEIP712.sol\";\n\nlibrary JoinSplitABIEncoder {\n    /**\n     * Calldata map\n     * 0x04:0x24      = calldata location of proofData byte array\n     * 0x24:0x44      = message sender\n     * 0x44:0x64      = h_x\n     * 0x64:0x84      = h_y\n     * 0x84:0xa4      = t2_x0\n     * 0xa4:0xc4      = t2_x1\n     * 0xc4:0xe4      = t2_y0\n     * 0xe4:0x104     = t2_y1\n     * 0x104:0x124    = length of proofData byte array\n     * 0x124:0x144    = m\n     * 0x144:0x164    = challenge\n     * 0x164:0x184    = publicOwner\n     * 0x184:0x1a4    = offset in byte array to notes\n     * 0x1a4:0x1c4    = offset in byte array to inputSignatures\n     * 0x1c4:0x2e4    = offset in byte array to outputOwners\n     * 0x1e4:0x204    = offset in byte array to metadata\n     */\n    function encodeAndExit(bytes32 domainHash) internal view {\n        assembly {\n            // set up initial variables\n            let notes := add(0x104, calldataload(0x184))\n            let n := calldataload(notes)\n            let m := calldataload(0x124)\n            let outputOwners := add(0x124, calldataload(0x1c4)) // one word after outputOwners = 1st\n            let signatures := add(0x124, calldataload(0x1a4)) // one word after signatures = 1st\n            let metadata := add(0x144, calldataload(0x1e4)) // two words after metadata = 1st\n\n            // memory map of `proofOutputs`\n\n            // 0x00 - 0x160  = scratch data for EIP712 signature computation and note hash computation\n            // ACE_NOTE_SIGNATURE struct hash variables\n            // 0x80 = struct hash\n            // 0xa0 = proofId (1)\n            // 0xc0 = noteHash\n            // 0xe0 = challenge\n            // 0x100 = sender\n            // struct hash of 'ACE_NOTE_SIGNATURE'\n            mstore(0x80, 0x6c1a087ea32e7586c4241d8ad29826c79af0e5ae5c44ca4be88caa5a18b99446)\n            mstore(0xa0, 0x01)\n            mstore(0xe0, calldataload(0x144)) // challenge\n            mstore(0x100, calldataload(0x24))\n\n            // EIP712 Signature variables\n            // 0x13e - 0x140 = 0x1901\n            // 0x140 - 0x160 = domainHash\n            // 0x160 - 0x180 = structHash\n            mstore(0x120, 0x1901)\n            mstore(0x140, domainHash) // domain hash\n\n            // `returndata` starts at 0x160\n            // `proofOutputs` starts at 0x180\n            // 0x160 - 0x180 = relative offset in returndata to first bytes argument (0x20)\n            // 0x180 - 0x1a0 = byte length of `proofOutputs`\n            // 0x1a0 - 0x1c0 = number of `proofOutputs` entries (1)\n            // 0x1c0 - 0x1e0 = relative memory offset between `v` and start of `proofOutput`\n\n            // `proofOutput` - t, starts at 0x1e0\n            // 0x1e0 - 0x200 = length of `proofOutput`\n            // 0x200 - 0x220 = relative offset between `t` and `inputNotes`\n            // 0x220 - 0x240 = relative offset between `t` and `outputNotes`\n            // 0x240 - 0x260 = `publicOwner`\n            // 0x260 - 0x280 = `publicValue`\n\n            // `inputNotes` starts at 0x280\n            // structure of `inputNotes` and `outputNotes`\n            // 0x00 - 0x20 = byte length of notes array\n            // 0x20 - 0x40 = number of notes `i`\n            // the next `i` consecutive blocks of 0x20-sized memory contain relative offset between\n            // start of notes array and the location of the `note`\n\n            // structure of a `note`\n            // 0x00 - 0x20 = size of `note`\n            // 0x20 - 0x40 = `owner`\n            // 0x40 - 0x60 = `noteHash`\n            // 0x60 - 0x80 = size of note `data`\n            // 0x80 - 0xa0 = compressed note coordinate `gamma` (part of `data`)\n            // 0xa0 - 0xc0 = compressed note coordinate `sigma` (part of `data`)\n            // 0xc0 - ???? = remaining note metadata\n\n            // `proofOutputs` must form a monolithic block of memory that we can return.\n            // `s` points to the memory location of the start of the current note\n            // `inputPtr` points to the start of the current `notes` dynamic bytes array\n\n            // length of proofOutputs is at s\n            mstore(0x1a0, 0x01)                            // number of proofs\n            mstore(0x1c0, 0x60)                            // offset to 1st proof\n            // length of proofOutput is at s + 0x60\n            mstore(0x200, 0xa0)                            // location of inputNotes\n            // location of outputNotes is at s + 0xa0\n            mstore(0x240, calldataload(0x164))             // publicOwner\n            // store kPublic. If kPublic is negative, store correct signed representation,\n            // relative to 2^256, not to the order of the bn128 group\n            let kPublic := calldataload(sub(add(notes, mul(calldataload(notes), 0xc0)), 0xa0))\n            switch gt(kPublic, 10944121435919637611123202872628637544274182200208017171849102093287904247808)\n            case 1 {\n                mstore(0x260, sub(kPublic, 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001))\n            }\n            case 0 {\n                mstore(0x260, kPublic)\n            }\n\n            let inputPtr := 0x280                                 // point to inputNotes\n            mstore(add(inputPtr, 0x20), m)                        // number of input notes\n            // set note pointer, offsetting lookup indices for each input note\n            let s := add(0x2c0, mul(m, 0x20))\n\n            for { let i := 0 } lt(i, m) { i := add(i, 0x01) } {\n                let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n                // get pointer to input signatures\n                let signatureIndex := add(signatures, mul(i, 0x60))\n                // copy note data to 0x00 - 0x80\n                calldatacopy(0x00, add(noteIndex, 0x40), 0x80) // get gamma, sigma\n\n                // construct EIP712 signature parameters\n                mstore(0xc0, keccak256(0x00, 0x80)) // note hash\n                // construct EIP712 signature message\n                mstore(0x160, keccak256(0x80, 0xa0))\n                mstore(0x00, keccak256(0x13e, 0x42))\n                // recover address of EIP712 signature\n                mstore(0x20, and(calldataload(signatureIndex), 0xff)) // get 8-bit v\n                calldatacopy(0x40, add(signatureIndex, 0x20), 0x40) // copy r, s into memory\n\n                // store note length in `s`\n                mstore(s, 0xa0)\n                // store note owner in `s + 0x20`. If ECDSA recovery fails, or signing address is `0`, throw an error\n                if or(\n                iszero(mload(add(s, 0x20))),\n                iszero(staticcall(gas, 0x01, 0x00, 0x80, add(s, 0x20), 0x20))\n                ) {\n                mstore(0x00, 400) revert(0x00, 0x20)\n                }\n                // store note hash in `s + 0x40`\n                mstore(add(s, 0x40), mload(0xc0))\n                // store note metadata length in `s + 0x60` (just the coordinates)\n                mstore(add(s, 0x60), 0x40)\n                // store compressed note coordinate gamma in `s + 0x80`\n                mstore(\n                add(s, 0x80),\n                or(\n                    calldataload(add(noteIndex, 0x40)),\n                    mul(\n                    and(calldataload(add(noteIndex, 0x60)), 0x01),\n                    0x8000000000000000000000000000000000000000000000000000000000000000\n                    )\n                )\n                )\n                // store compressed note coordinate sigma in `s + 0xa0`\n                mstore(\n                add(s, 0xa0),\n                or(\n                    calldataload(add(noteIndex, 0x80)),\n                    mul(\n                    and(calldataload(add(noteIndex, 0xa0)), 0x01),\n                    0x8000000000000000000000000000000000000000000000000000000000000000\n                    )\n                )\n                )\n                // compute the relative offset to index this note in our returndata\n                mstore(add(add(inputPtr, 0x40), mul(i, 0x20)), sub(s, inputPtr)) // relative offset to note\n        \n                // increase s by note length\n                s := add(s, 0xc0)\n            }\n\n            // transition between input and output notes\n            mstore(0x280, sub(sub(s, inputPtr), 0x20)) // store total length of inputNotes at first index of inputNotes \n            mstore(0x220, add(0xa0, sub(s, inputPtr))) // store relative memory offset to outputNotes\n            inputPtr := s\n            mstore(add(inputPtr, 0x20), sub(n, m)) // store number of output notes\n            s := add(s, add(0x40, mul(sub(n, m), 0x20)))\n\n            // output notes\n            for { let i := m } lt(i, n) { i := add(i, 0x01) } {\n                // get note index\n                let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n                // get pointer to metadata\n                let metadataIndex := calldataload(add(metadata, mul(sub(i, m), 0x20)))\n                // get size of metadata\n                let metadataLength := calldataload(add(sub(metadata, 0x40), metadataIndex))\n\n                // copy note data to 0x00 - 0x80\n                calldatacopy(0x00, add(noteIndex, 0x40), 0x80) // get gamma, sigma\n\n                // store note length in `s`\n                mstore(s, add(0xa0, metadataLength))\n                // store the owner of the note in `s + 0x20`\n                mstore(add(s, 0x20), calldataload(add(outputOwners, mul(sub(i, m), 0x20))))\n                // store note hash\n                mstore(add(s, 0x40), keccak256(0x00, 0x80))\n                // store note metadata length if `s + 0x60`\n                mstore(add(s, 0x60), add(0x40, metadataLength))\n                // store compressed note coordinate gamma in `s + 0x80`\n                mstore(\n                    add(s, 0x80),\n                    or(\n                        mload(0x00),\n                        mul(\n                            and(mload(0x20), 0x01),\n                            0x8000000000000000000000000000000000000000000000000000000000000000\n                        )\n                    )\n                )\n                // store compressed note coordinate sigma in `s + 0xa0`\n                mstore(\n                add(s, 0xa0),\n                or(\n                    mload(0x40),\n                    mul(\n                        and(mload(0x60), 0x01),\n                        0x8000000000000000000000000000000000000000000000000000000000000000\n                    )\n                )\n                )\n                // copy metadata into `s + 0xc0`\n                calldatacopy(add(s, 0xc0), add(metadataIndex, sub(metadata, 0x20)), metadataLength)\n                // compute the relative offset to index this note in our returndata\n                mstore(add(add(inputPtr, 0x40), mul(sub(i, m), 0x20)), sub(s, inputPtr)) // relative offset to note\n\n                // increase s by note length\n                s := add(s, add(mload(s), 0x20))\n            }\n\n            // cleanup. the length of the outputNotes = s - inputPtr\n            mstore(inputPtr, sub(sub(s, inputPtr), 0x20)) // store length of outputNotes at start of outputNotes\n            let notesLength := sub(s, 0x280)\n            mstore(0x1e0, add(0x80, notesLength)) // store length of proofOutput at 0x160\n            mstore(0x180, add(0xe0, notesLength)) // store length of proofOutputs at 0x100\n            // mstore(0x00 , notesLength) return(0x00, 0x20)\n            mstore(0x160, 0x20)\n            return(0x160, add(0x120, notesLength)) // return the final byte array\n        }\n    }\n}\n\n\ncontract JoinSplitABIEncoderTest is LibEIP712 {\n\n    function validateJoinSplit(\n        bytes calldata, \n        address, \n        uint[6] calldata\n    ) \n        external \n        view \n        returns (bytes memory) \n    {\n        JoinSplitABIEncoder.encodeAndExit(EIP712_DOMAIN_HASH);\n    }\n}\n",
+  "sourcePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/ACE/validators/JoinSplit/JoinSplitABIEncoder.sol",
+  "ast": {
+    "absolutePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/ACE/validators/JoinSplit/JoinSplitABIEncoder.sol",
+    "exportedSymbols": {
+      "JoinSplitABIEncoder": [
+        1120
+      ],
+      "JoinSplitABIEncoderTest": [
+        1143
+      ]
+    },
+    "id": 1144,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1111,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:3"
+      },
+      {
+        "absolutePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/libs/LibEIP712.sol",
+        "file": "../../../libs/LibEIP712.sol",
+        "id": 1112,
+        "nodeType": "ImportDirective",
+        "scope": 1144,
+        "sourceUnit": 1939,
+        "src": "33:37:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1120,
+        "linearizedBaseContracts": [
+          1120
+        ],
+        "name": "JoinSplitABIEncoder",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1118,
+              "nodeType": "Block",
+              "src": "867:10699:3",
+              "statements": [
+                {
+                  "externalReferences": [
+                    {
+                      "domainHash": {
+                        "declaration": 1114,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "2230:10:3",
+                        "valueSize": 1
+                      }
+                    }
+                  ],
+                  "id": 1117,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{\n    let notes := add(0x104, calldataload(0x184))\n    let n := calldataload(notes)\n    let m := calldataload(0x124)\n    let outputOwners := add(0x124, calldataload(0x1c4))\n    let signatures := add(0x124, calldataload(0x1a4))\n    let metadata := add(0x144, calldataload(0x1e4))\n    mstore(0x80, 0x6c1a087ea32e7586c4241d8ad29826c79af0e5ae5c44ca4be88caa5a18b99446)\n    mstore(0xa0, 0x01)\n    mstore(0xe0, calldataload(0x144))\n    mstore(0x100, calldataload(0x24))\n    mstore(0x120, 0x1901)\n    mstore(0x140, domainHash)\n    mstore(0x1a0, 0x01)\n    mstore(0x1c0, 0x60)\n    mstore(0x200, 0xa0)\n    mstore(0x240, calldataload(0x164))\n    let kPublic := calldataload(sub(add(notes, mul(calldataload(notes), 0xc0)), 0xa0))\n    switch gt(kPublic, 10944121435919637611123202872628637544274182200208017171849102093287904247808)\n    case 1 {\n        mstore(0x260, sub(kPublic, 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001))\n    }\n    case 0 {\n        mstore(0x260, kPublic)\n    }\n    let inputPtr := 0x280\n    mstore(add(inputPtr, 0x20), m)\n    let s := add(0x2c0, mul(m, 0x20))\n    for {\n        let i := 0\n    }\n    lt(i, m)\n    {\n        i := add(i, 0x01)\n    }\n    {\n        let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n        let signatureIndex := add(signatures, mul(i, 0x60))\n        calldatacopy(0x00, add(noteIndex, 0x40), 0x80)\n        mstore(0xc0, keccak256(0x00, 0x80))\n        mstore(0x160, keccak256(0x80, 0xa0))\n        mstore(0x00, keccak256(0x13e, 0x42))\n        mstore(0x20, and(calldataload(signatureIndex), 0xff))\n        calldatacopy(0x40, add(signatureIndex, 0x20), 0x40)\n        mstore(s, 0xa0)\n        if or(iszero(mload(add(s, 0x20))), iszero(staticcall(gas(), 0x01, 0x00, 0x80, add(s, 0x20), 0x20)))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n        mstore(add(s, 0x40), mload(0xc0))\n        mstore(add(s, 0x60), 0x40)\n        mstore(add(s, 0x80), or(calldataload(add(noteIndex, 0x40)), mul(and(calldataload(add(noteIndex, 0x60)), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(s, 0xa0), or(calldataload(add(noteIndex, 0x80)), mul(and(calldataload(add(noteIndex, 0xa0)), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(add(inputPtr, 0x40), mul(i, 0x20)), sub(s, inputPtr))\n        s := add(s, 0xc0)\n    }\n    mstore(0x280, sub(sub(s, inputPtr), 0x20))\n    mstore(0x220, add(0xa0, sub(s, inputPtr)))\n    inputPtr := s\n    mstore(add(inputPtr, 0x20), sub(n, m))\n    s := add(s, add(0x40, mul(sub(n, m), 0x20)))\n    for {\n        let i := m\n    }\n    lt(i, n)\n    {\n        i := add(i, 0x01)\n    }\n    {\n        let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n        let metadataIndex := calldataload(add(metadata, mul(sub(i, m), 0x20)))\n        let metadataLength := calldataload(add(sub(metadata, 0x40), metadataIndex))\n        calldatacopy(0x00, add(noteIndex, 0x40), 0x80)\n        mstore(s, add(0xa0, metadataLength))\n        mstore(add(s, 0x20), calldataload(add(outputOwners, mul(sub(i, m), 0x20))))\n        mstore(add(s, 0x40), keccak256(0x00, 0x80))\n        mstore(add(s, 0x60), add(0x40, metadataLength))\n        mstore(add(s, 0x80), or(mload(0x00), mul(and(mload(0x20), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(s, 0xa0), or(mload(0x40), mul(and(mload(0x60), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        calldatacopy(add(s, 0xc0), add(metadataIndex, sub(metadata, 0x20)), metadataLength)\n        mstore(add(add(inputPtr, 0x40), mul(sub(i, m), 0x20)), sub(s, inputPtr))\n        s := add(s, add(mload(s), 0x20))\n    }\n    mstore(inputPtr, sub(sub(s, inputPtr), 0x20))\n    let notesLength := sub(s, 0x280)\n    mstore(0x1e0, add(0x80, notesLength))\n    mstore(0x180, add(0xe0, notesLength))\n    mstore(0x160, 0x20)\n    return(0x160, add(0x120, notesLength))\n}",
+                  "src": "877:10689:3"
+                }
+              ]
+            },
+            "documentation": "Calldata map\n0x04:0x24      = calldata location of proofData byte array\n0x24:0x44      = message sender\n0x44:0x64      = h_x\n0x64:0x84      = h_y\n0x84:0xa4      = t2_x0\n0xa4:0xc4      = t2_x1\n0xc4:0xe4      = t2_y0\n0xe4:0x104     = t2_y1\n0x104:0x124    = length of proofData byte array\n0x124:0x144    = m\n0x144:0x164    = challenge\n0x164:0x184    = publicOwner\n0x184:0x1a4    = offset in byte array to notes\n0x1a4:0x1c4    = offset in byte array to inputSignatures\n0x1c4:0x2e4    = offset in byte array to outputOwners\n0x1e4:0x204    = offset in byte array to metadata",
+            "id": 1119,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "encodeAndExit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1115,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1114,
+                  "name": "domainHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1119,
+                  "src": "833:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1113,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "833:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "832:20:3"
+            },
+            "returnParameters": {
+              "id": 1116,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "867:0:3"
+            },
+            "scope": 1120,
+            "src": "810:10756:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 1144,
+        "src": "72:11496:3"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1121,
+              "name": "LibEIP712",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1938,
+              "src": "11607:9:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LibEIP712_$1938",
+                "typeString": "contract LibEIP712"
+              }
+            },
+            "id": 1122,
+            "nodeType": "InheritanceSpecifier",
+            "src": "11607:9:3"
+          }
+        ],
+        "contractDependencies": [
+          1938
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1143,
+        "linearizedBaseContracts": [
+          1143,
+          1938
+        ],
+        "name": "JoinSplitABIEncoderTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1141,
+              "nodeType": "Block",
+              "src": "11795:70:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1138,
+                        "name": "EIP712_DOMAIN_HASH",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1864,
+                        "src": "11839:18:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1135,
+                        "name": "JoinSplitABIEncoder",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1120,
+                        "src": "11805:19:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_JoinSplitABIEncoder_$1120_$",
+                          "typeString": "type(library JoinSplitABIEncoder)"
+                        }
+                      },
+                      "id": 1137,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "encodeAndExit",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1119,
+                      "src": "11805:33:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) view"
+                      }
+                    },
+                    "id": 1139,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "11805:53:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1140,
+                  "nodeType": "ExpressionStatement",
+                  "src": "11805:53:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1142,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "validateJoinSplit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1131,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1124,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1142,
+                  "src": "11660:14:3",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1123,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11660:5:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1126,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1142,
+                  "src": "11685:7:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1125,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11685:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1130,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1142,
+                  "src": "11703:16:3",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$6_calldata_ptr",
+                    "typeString": "uint256[6]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1127,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "11703:4:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 1129,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "36",
+                      "id": 1128,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "11708:1:3",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": null,
+                        "typeString": null
+                      },
+                      "value": "6"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "11703:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$6_storage_ptr",
+                      "typeString": "uint256[6]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11650:75:3"
+            },
+            "returnParameters": {
+              "id": 1134,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1133,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1142,
+                  "src": "11776:12:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1132,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11776:5:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11775:14:3"
+            },
+            "scope": 1143,
+            "src": "11624:241:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1144,
+        "src": "11571:296:3"
+      }
+    ],
+    "src": "0:11868:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/ACE/validators/JoinSplit/JoinSplitABIEncoder.sol",
+    "exportedSymbols": {
+      "JoinSplitABIEncoder": [
+        1120
+      ],
+      "JoinSplitABIEncoderTest": [
+        1143
+      ]
+    },
+    "id": 1144,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1111,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:3"
+      },
+      {
+        "absolutePath": "/home/arsalen/Desktop/draft/AZTECProtocol/aztec-demo-js/protocol/contracts/libs/LibEIP712.sol",
+        "file": "../../../libs/LibEIP712.sol",
+        "id": 1112,
+        "nodeType": "ImportDirective",
+        "scope": 1144,
+        "sourceUnit": 1939,
+        "src": "33:37:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1120,
+        "linearizedBaseContracts": [
+          1120
+        ],
+        "name": "JoinSplitABIEncoder",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1118,
+              "nodeType": "Block",
+              "src": "867:10699:3",
+              "statements": [
+                {
+                  "externalReferences": [
+                    {
+                      "domainHash": {
+                        "declaration": 1114,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "2230:10:3",
+                        "valueSize": 1
+                      }
+                    }
+                  ],
+                  "id": 1117,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{\n    let notes := add(0x104, calldataload(0x184))\n    let n := calldataload(notes)\n    let m := calldataload(0x124)\n    let outputOwners := add(0x124, calldataload(0x1c4))\n    let signatures := add(0x124, calldataload(0x1a4))\n    let metadata := add(0x144, calldataload(0x1e4))\n    mstore(0x80, 0x6c1a087ea32e7586c4241d8ad29826c79af0e5ae5c44ca4be88caa5a18b99446)\n    mstore(0xa0, 0x01)\n    mstore(0xe0, calldataload(0x144))\n    mstore(0x100, calldataload(0x24))\n    mstore(0x120, 0x1901)\n    mstore(0x140, domainHash)\n    mstore(0x1a0, 0x01)\n    mstore(0x1c0, 0x60)\n    mstore(0x200, 0xa0)\n    mstore(0x240, calldataload(0x164))\n    let kPublic := calldataload(sub(add(notes, mul(calldataload(notes), 0xc0)), 0xa0))\n    switch gt(kPublic, 10944121435919637611123202872628637544274182200208017171849102093287904247808)\n    case 1 {\n        mstore(0x260, sub(kPublic, 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001))\n    }\n    case 0 {\n        mstore(0x260, kPublic)\n    }\n    let inputPtr := 0x280\n    mstore(add(inputPtr, 0x20), m)\n    let s := add(0x2c0, mul(m, 0x20))\n    for {\n        let i := 0\n    }\n    lt(i, m)\n    {\n        i := add(i, 0x01)\n    }\n    {\n        let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n        let signatureIndex := add(signatures, mul(i, 0x60))\n        calldatacopy(0x00, add(noteIndex, 0x40), 0x80)\n        mstore(0xc0, keccak256(0x00, 0x80))\n        mstore(0x160, keccak256(0x80, 0xa0))\n        mstore(0x00, keccak256(0x13e, 0x42))\n        mstore(0x20, and(calldataload(signatureIndex), 0xff))\n        calldatacopy(0x40, add(signatureIndex, 0x20), 0x40)\n        mstore(s, 0xa0)\n        if or(iszero(mload(add(s, 0x20))), iszero(staticcall(gas(), 0x01, 0x00, 0x80, add(s, 0x20), 0x20)))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n        mstore(add(s, 0x40), mload(0xc0))\n        mstore(add(s, 0x60), 0x40)\n        mstore(add(s, 0x80), or(calldataload(add(noteIndex, 0x40)), mul(and(calldataload(add(noteIndex, 0x60)), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(s, 0xa0), or(calldataload(add(noteIndex, 0x80)), mul(and(calldataload(add(noteIndex, 0xa0)), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(add(inputPtr, 0x40), mul(i, 0x20)), sub(s, inputPtr))\n        s := add(s, 0xc0)\n    }\n    mstore(0x280, sub(sub(s, inputPtr), 0x20))\n    mstore(0x220, add(0xa0, sub(s, inputPtr)))\n    inputPtr := s\n    mstore(add(inputPtr, 0x20), sub(n, m))\n    s := add(s, add(0x40, mul(sub(n, m), 0x20)))\n    for {\n        let i := m\n    }\n    lt(i, n)\n    {\n        i := add(i, 0x01)\n    }\n    {\n        let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n        let metadataIndex := calldataload(add(metadata, mul(sub(i, m), 0x20)))\n        let metadataLength := calldataload(add(sub(metadata, 0x40), metadataIndex))\n        calldatacopy(0x00, add(noteIndex, 0x40), 0x80)\n        mstore(s, add(0xa0, metadataLength))\n        mstore(add(s, 0x20), calldataload(add(outputOwners, mul(sub(i, m), 0x20))))\n        mstore(add(s, 0x40), keccak256(0x00, 0x80))\n        mstore(add(s, 0x60), add(0x40, metadataLength))\n        mstore(add(s, 0x80), or(mload(0x00), mul(and(mload(0x20), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        mstore(add(s, 0xa0), or(mload(0x40), mul(and(mload(0x60), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n        calldatacopy(add(s, 0xc0), add(metadataIndex, sub(metadata, 0x20)), metadataLength)\n        mstore(add(add(inputPtr, 0x40), mul(sub(i, m), 0x20)), sub(s, inputPtr))\n        s := add(s, add(mload(s), 0x20))\n    }\n    mstore(inputPtr, sub(sub(s, inputPtr), 0x20))\n    let notesLength := sub(s, 0x280)\n    mstore(0x1e0, add(0x80, notesLength))\n    mstore(0x180, add(0xe0, notesLength))\n    mstore(0x160, 0x20)\n    return(0x160, add(0x120, notesLength))\n}",
+                  "src": "877:10689:3"
+                }
+              ]
+            },
+            "documentation": "Calldata map\n0x04:0x24      = calldata location of proofData byte array\n0x24:0x44      = message sender\n0x44:0x64      = h_x\n0x64:0x84      = h_y\n0x84:0xa4      = t2_x0\n0xa4:0xc4      = t2_x1\n0xc4:0xe4      = t2_y0\n0xe4:0x104     = t2_y1\n0x104:0x124    = length of proofData byte array\n0x124:0x144    = m\n0x144:0x164    = challenge\n0x164:0x184    = publicOwner\n0x184:0x1a4    = offset in byte array to notes\n0x1a4:0x1c4    = offset in byte array to inputSignatures\n0x1c4:0x2e4    = offset in byte array to outputOwners\n0x1e4:0x204    = offset in byte array to metadata",
+            "id": 1119,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "encodeAndExit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1115,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1114,
+                  "name": "domainHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1119,
+                  "src": "833:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1113,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "833:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "832:20:3"
+            },
+            "returnParameters": {
+              "id": 1116,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "867:0:3"
+            },
+            "scope": 1120,
+            "src": "810:10756:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 1144,
+        "src": "72:11496:3"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1121,
+              "name": "LibEIP712",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1938,
+              "src": "11607:9:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LibEIP712_$1938",
+                "typeString": "contract LibEIP712"
+              }
+            },
+            "id": 1122,
+            "nodeType": "InheritanceSpecifier",
+            "src": "11607:9:3"
+          }
+        ],
+        "contractDependencies": [
+          1938
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1143,
+        "linearizedBaseContracts": [
+          1143,
+          1938
+        ],
+        "name": "JoinSplitABIEncoderTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1141,
+              "nodeType": "Block",
+              "src": "11795:70:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1138,
+                        "name": "EIP712_DOMAIN_HASH",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1864,
+                        "src": "11839:18:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1135,
+                        "name": "JoinSplitABIEncoder",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1120,
+                        "src": "11805:19:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_JoinSplitABIEncoder_$1120_$",
+                          "typeString": "type(library JoinSplitABIEncoder)"
+                        }
+                      },
+                      "id": 1137,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "encodeAndExit",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1119,
+                      "src": "11805:33:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) view"
+                      }
+                    },
+                    "id": 1139,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "11805:53:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1140,
+                  "nodeType": "ExpressionStatement",
+                  "src": "11805:53:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1142,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "validateJoinSplit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1131,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1124,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1142,
+                  "src": "11660:14:3",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1123,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11660:5:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1126,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1142,
+                  "src": "11685:7:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1125,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11685:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1130,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1142,
+                  "src": "11703:16:3",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$6_calldata_ptr",
+                    "typeString": "uint256[6]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1127,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "11703:4:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 1129,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "36",
+                      "id": 1128,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "11708:1:3",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": null,
+                        "typeString": null
+                      },
+                      "value": "6"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "11703:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$6_storage_ptr",
+                      "typeString": "uint256[6]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11650:75:3"
+            },
+            "returnParameters": {
+              "id": 1134,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1133,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1142,
+                  "src": "11776:12:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1132,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11776:5:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11775:14:3"
+            },
+            "scope": 1143,
+            "src": "11624:241:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1144,
+        "src": "11571:296:3"
+      }
+    ],
+    "src": "0:11868:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.4+commit.9549d8ff.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.2",
+  "updatedAt": "2019-03-03T05:16:18.507Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
